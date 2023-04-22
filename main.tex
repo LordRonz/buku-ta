@@ -3,16 +3,13 @@
 \author{Musk, Elon Reeve}
 
 % Pengaturan ukuran teks dan bentuk halaman dua sisi
-\documentclass[10pt,twoside]{report}
+\documentclass[12pt,twoside]{report}
 
 % Pengaturan ukuran halaman dan margin
-\usepackage[a5paper,top=25mm,left=25mm,right=20mm,bottom=25mm]{geometry}
+\usepackage[a4paper,top=30mm,left=30mm,right=20mm,bottom=25mm]{geometry}
 
 % Pengaturan ukuran spasi
 \usepackage[singlespacing]{setspace}
-
-% Pengaturan format bahasa
-\usepackage[indonesian]{babel}
 
 % Pengaturan detail pada file PDF
 \usepackage[pdfauthor={\@author},bookmarksnumbered,pdfborder={0 0 0}]{hyperref}
@@ -24,16 +21,16 @@
 \usepackage[table,xcdraw]{xcolor}
 
 % Pengaturan kutipan artikel
-\usepackage[numbers]{natbib}
+\usepackage[style=apa, backend=biber]{biblatex}
 
 % Package lainnya
 \usepackage{changepage}
 \usepackage{enumitem}
 \usepackage{eso-pic}
+\usepackage{txfonts} % Font times
 \usepackage{etoolbox}
 \usepackage{graphicx}
 \usepackage{lipsum}
-\usepackage{lmodern}
 \usepackage{longtable}
 \usepackage{tabularx}
 \usepackage{wrapfig}
@@ -50,7 +47,7 @@
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
 \pagestyle{fancy}
-\fancyfoot[CE,CO]{\thepage}
+\fancyfoot[LE,RO]{\thepage}
 \patchcmd{\chapter}{plain}{fancy}{}{}
 \patchcmd{\chapter}{empty}{plain}{}{}
 
@@ -64,6 +61,9 @@
 \titlespacing{\section}{0ex}{1ex}{0ex}
 \titlespacing{\subsection}{0ex}{0.5ex}{0ex}
 \titlespacing{\subsubsection}{0ex}{0.5ex}{0ex}
+
+% Menambahkan resource daftar pustaka
+\addbibresource{pustaka/pustaka.bib}
 
 % Pengaturan format potongan kode
 \usepackage{listings}
@@ -99,13 +99,13 @@
 
   % Sampul dalam Bahasa Indonesia
   \renewcommand\covercontents{sampul/konten-id.tex}
-  \input{sampul/sampul-dalam.tex}
+  \input{sampul/sampul-luar-tipis.tex}
   \clearpage
   \cleardoublepage
 
   % Sampul dalam Bahasa Inggris
   \renewcommand\covercontents{sampul/konten-en.tex}
-  \input{sampul/sampul-dalam.tex}
+  \input{sampul/sampul-luar-tipis.tex}
   \cleardoublepage
 
   % Pengaturan ukuran indentasi paragraf
@@ -114,12 +114,16 @@
   % Pengaturan ukuran spasi paragraf
   \setlength{\parskip}{1ex}
 
+  % Lembar pengesahan
+  \input{lainnya/lembar-pengesahan.tex}
+  \cleardoublepage
+  \input{lainnya/lembar-pengesahan-en.tex}
+  \cleardoublepage
+
   % Pernyataan keaslian
   \input{lainnya/pernyataan-keaslian.tex}
   \cleardoublepage
-
-  % Lembar pengesahan
-  \input{lainnya/lembar-pengesahan.tex}
+  \input{lainnya/pernyataan-keaslian-en.tex}
   \cleardoublepage
 
   % Nomor halaman pembuka dimulai dari sini
@@ -178,11 +182,15 @@
   \input{bab/5-penutup.tex}
   \cleardoublepage
 
-  % Daftar pustaka
-  \renewcommand\bibname{DAFTAR PUSTAKA}
-  \addcontentsline{toc}{chapter}{\bibname}
-  \bibliographystyle{unsrtnat}
-  \bibliography{pustaka/pustaka.bib}
+  \chapter*{DAFTAR PUSTAKA}
+  \addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
+  \renewcommand\refname{}
+  \vspace{2ex}
+  \renewcommand{\bibname}{}
+  \begingroup
+  \def\chapter*#1{}
+  \printbibliography
+  \endgroup
   \cleardoublepage
 
   % Biografi penulis
