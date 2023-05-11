@@ -5,29 +5,98 @@
 
 Demi mendukung penelitian ini, \lipsum[1][1-5]
 
-\section{Roket Luar Angkasa}
-\label{sec:roketluarangkasa}
+\section{Penelitian Terdahulu}
+\label{sec:penelitianterdahulu}
 
 % Contoh input gambar
-\begin{figure}[ht]
-  \centering
+\subsection{Sistem Transaksi Antar Player Pada Game Multiplayer Wisata Bromo Menggunakan Blockchain}
+\label{subsec:sistemtransaksiblockchainreza}
+Penelitian oleh Reza Putra Pradana berjudul Sistem Transaksi Antar Player Pada Game Multiplayer Wisata
+Bromo merupakan implementasi teknologi Blockchain untuk sistem transaksi antar player dalam bentuk game
+dengan mengujikan latensi serta performa waktu eksekusi transaksi hingga biaya gas yang dibutuhkan untuk
+pengembangan game tersebut. Dalam penelitian ini Blockchain yang digunakan salah satunya adalah Ethereum untuk pengujiannya.
+Adanya biaya gas kaitannya erat dengan proses \emph{development} dari game itu sendiri karena melalui biaya gas
+dapat diketahui berapa lama proses transaksi dilakukan sehingga analisis lebih lanjut diperlukan untuk mendapat formula yang pas terkait biaya gas dengan kebutuhan \emph{development} dari game tersebut.
 
-  % Ubah dengan nama file gambar dan ukuran yang akan digunakan
-  \includegraphics[scale=0.35]{gambar/roketluarangkasa.jpg}
+\section{\emph{Blockchain}}
+\label{sec:blockchain}
+Teknologi blockchain adalah mekanisme database canggih yang memungkinkan berbagi informasi yang transparan di dalam jaringan bisnis.
+Basis data blockchain menyimpan data dalam blok yang terhubung satu sama lain dalam sebuah rantai. Data tersebut konsisten secara kronologis
+karena tidak dapat dihapus atau dimodifikasi tanpa persetujuan dari jaringan. Sebagai hasilnya, teknologi blockchain dapat digunakan untuk
+membuat buku besar tidak dapat diubah atau immutable untuk melacak pesanan, pembayaran, akun, dan transaksi lainnya. Sistem ini memiliki
+mekanisme bawaan yang mencegah entri transaksi yang tidak sah dan menciptakan konsistensi dalam pandangan bersama mengenai transaksi-transaksi tersebut.
 
-  % Ubah dengan keterangan gambar yang diinginkan
-  \caption{Peluncuran roket luar angkasa \emph{Discovery} \parencite{roketluarangkasa}.}
-  \label{fig:roketluarangkasa}
-\end{figure}
-
-Roket luar angkasa merupakan \lipsum[1]
-
-\emph{Discovery}, Gambar \ref{fig:roketluarangkasa}, merupakan \lipsum[2]
-
-\section{Gravitasi}
-\label{sec:gravitasi}
+Untuk mengenal \emph{Blockchain}, dapat dimulai dari pemahaman dari pengertian yang paling bisa diterima,
+Menurut Layman, \emph{Blockchain} adalah jaringan yang terus berkembang, aman, dan dibagikan sistem pencatatan
+di mana setiap pengguna data memegang salinan catatan, yang hanya dapat diperbarui jika semua pihak yang
+terlibat dalam suatu transaksi setuju untuk memperbarui. Sedangkan secara teknisnya, \emph{Blockchain} adalah buku besar
+terdistribusi peer-to-peer yang aman secara kriptografis, hanya ditambahkan, tidak dapat diubah (sangat sulit untuk perubahan),
+dan hanya dapat diperbarui melalui konsensus atau kesepakatan seluruh pihak.
 
 Gravitasi merupakan \lipsum[1]
+
+\section{\emph{Ethereum}}
+\emph{Ethereum} adalah jaringan mesin virtual peer-to-peer yang dapat digunakan oleh pengembang mana pun untuk menjalankan aplikasi
+terdistribusi (Dapps). Program komputer ini dapat berbentuk apa saja, tetapi jaringan dioptimalkan untuk menjalankan aturan yang
+berjalan secara otomatis ketika kondisi tertentu terpenuhi, seperti kontrak. Ethereum menggunakan \emph{Blockchain} publiknya sendiri yang
+terdesentralisasi untuk menyimpan, mengeksekusi, dan melindungi kontrak ini secara kriptografis. Setiap komputer di jaringan ini akan
+mengunduh mesin virtual kecil untuk disinkronkan dengan \emph{Blockchain Ethereum} dan tetap tersedia untuk menjalankan kontrak.
+Jaringan komputer terdistribusi ini dengan mudah menyediakan keamanan, keandalan, dan daya komputasi yang diperlukan untuk melaksanakan
+pengaturan yang dirancang. \emph{Blockchain Ethereum} pun juga dapat dicari secara publik
+
+\section{\emph{Smart Contract}}
+
+"\emph{Smart contract}" (kontrak cerdas) adalah program yang disimpan di dalam \emph{blockchain} dan dijalankan ketika
+kondisi-kondisi yang telah ditentukan terpenuhi. Umumnya, \emph{smart contract} digunakan untuk mengotomatisasi
+pelaksanaan suatu kesepakatan agar semua peserta dapat segera memastikan hasilnya, tanpa ada keterlibatan pihak
+perantara atau kehilangan waktu. \emph{Smart contract} juga dapat mengotomatisasi alur kerja dengan memicu tindakan
+berikutnya ketika kondisi yang telah ditetapkan terpenuhi.
+
+Kontrak pada dasarnya merupakan cara untuk membentuk kesepakatan persetujuan terhadap suatu hal (Szabo, 1996).
+Kontrak secara umum digunakan untuk keperluan dalam membangun protokol persetujuan terhadap suatu hubungan yang dibentuk
+oleh dua pihak individu/kelompok atau lebih. Kontrak akan dibangun oleh dua orang atau lebih dengan menggunakan bantuan
+supervisi dari pihak ketiga yang dianggap bisa dipercaya. Supervisi ini sangat penting untuk dimiliki untuk menghindari adanya
+manipulasi oleh salah satu pihak terhadap kontrak yang dibentuk. Seiring dengan perkembangan teknologi, terbentuk suatu konsep
+kontrak baru yang bernama \emph{Smart Contract}.
+
+\section{\emph{Ethereum Transaction}}
+
+Transaksi adalah paket data yang ditandatangani untuk mengirim Ether dari satu akun ke akun lain atau ke kontrak, memanggil
+metode kontrak, atau menyebarkan kontrak baru. Sebuah transaksi adalah ditandatangani menggunakan ECDSA (Elliptic Curve Digital
+Signature Algorithm), yang merupakan digital algoritma tanda tangan berdasarkan ECC. Sebuah transaksi berisi penerima pesan,
+sebuah tanda tangan yang mengidentifikasi pengirim dan membuktikan niat mereka, jumlah Ether yang akan ditransfer, jumlah
+maksimum langkah komputasi yang diizinkan untuk dilakukan oleh eksekusi transaksi (disebut batas gas), dan biaya yang
+bersedia dibayar oleh pengirim transaksi untuk masing-masing langkah komputasi (disebut harga gas). Jika niat transaksi
+adalah untuk memanggil metode kontrak, itu juga berisi data input, atau jika tujuannya adalah untuk menyebarkan kontrak,
+maka itu bisa kode inisialisasi. Produk gas yang digunakan dan harga gas disebut transaksi biaya. Untuk mengirim Ether atau
+menjalankan metode kontrak, perlu menyalurrkan transaksi ke jaringan. Pengirim perlu menandatangani transaksi dengan kunci
+pribadinya (Prusty, 2017)
+
+\section{\emph{InterPlanetary File System}}
+
+IPFS adalah sekumpulan protokol modular untuk mengatur dan mentransfer data, yang dirancang dari awal dengan prinsip-prinsip
+addressing konten dan jaringan peer-to-peer. Karena IPFS bersifat open-source, terdapat beberapa implementasi dari IPFS.
+Meskipun IPFS memiliki lebih dari satu kasus penggunaan, kasus penggunaan utamanya adalah untuk menerbitkan data
+(file, direktori, situs web, dll.) secara terdesentralisasi.
+
+IPFS adalah jaringan terbuka, terdistribusi, dan partisipatif yang mengurangi silo data dari server terpusat, membuat 
+IPFS lebih tangguh daripada sistem tradisional. Tidak ada entitas atau individu tunggal yang mengendalikan, mengelola, 
+atau memiliki IPFS; sebaliknya, ini adalah proyek yang dijaga oleh komunitas dengan beberapa implementasi dari protokol, 
+beberapa alat dan aplikasi yang memanfaatkan protokol tersebut, dan beberapa pengguna dan organisasi yang berkontribusi 
+pada desain dan pengembangannya.
+
+IPFS menyediakan akses yang lebih cepat ke data dengan memungkinkannya direplikasi dan diambil dari beberapa lokasi, 
+serta memungkinkan pengguna untuk mengakses data dari lokasi terdekat menggunakan addressing konten daripada addressing berbasis lokasi. 
+Dengan kata lain, karena data dapat diakses berdasarkan kontennya, sebuah node pada jaringan dapat mengambil data tersebut dari node lain 
+di jaringan yang memiliki data; dengan demikian, masalah kinerja seperti laten dapat dikurangi.
+
+\section{\emph{Ethereum Virtual Machine}}
+
+Proses dibalik berjalannya \emph{Smart Contract} pada \emph{Ethereum} diatur dalam suatu mesin komputasi yang diberi nama
+\emph{Ethereum Virtual Machine}. Semua penyebaran serta eksekusi dari \emph{Smart Contract} berlangsung dengan melewati mesin virtual ini.
+Transaksi transfer nilai sederhana dari satu EOA ke EOA lainnya tidak perlu melibatkannya, tetapi yang lainnya akan melibatkan pembaruan status yang dihitung oleh \emph{EVM}.
+Pada tingkat tinggi, EVM yang berjalan di \emph{Blockchain Ethereum} dapat dianggap sebagai komputer terdesentralisasi global yang berisi jutaan objek yang dapat dieksekusi,
+masing-masing dengan penyimpanan data permanennya sendiri.
 
 \subsection{Hukum Newton}
 \label{subsec:hukumnewton}
