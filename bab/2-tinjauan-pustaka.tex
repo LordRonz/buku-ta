@@ -12,52 +12,75 @@ Demi mendukung penelitian ini, \lipsum[1][1-5]
 \subsection{Sistem Transaksi Antar Player Pada Game Multiplayer Wisata Bromo Menggunakan Blockchain}
 \label{subsec:sistemtransaksiblockchainreza}
 Penelitian oleh Reza Putra Pradana berjudul Sistem Transaksi Antar Player Pada Game Multiplayer Wisata
-Bromo merupakan implementasi teknologi Blockchain untuk sistem transaksi antar player dalam bentuk game
+Bromo merupakan implementasi teknologi \emph{Blockchain} untuk sistem transaksi antar player dalam bentuk game
 dengan mengujikan latensi serta performa waktu eksekusi transaksi hingga biaya gas yang dibutuhkan untuk
-pengembangan game tersebut. Dalam penelitian ini Blockchain yang digunakan salah satunya adalah Ethereum untuk pengujiannya.
+pengembangan game tersebut. Dalam penelitian ini \emph{Blockchain} yang digunakan salah satunya adalah Ethereum untuk pengujiannya.
 Adanya biaya gas kaitannya erat dengan proses \emph{development} dari game itu sendiri karena melalui biaya gas
 dapat diketahui berapa lama proses transaksi dilakukan sehingga analisis lebih lanjut diperlukan untuk mendapat formula yang pas terkait biaya gas dengan kebutuhan \emph{development} dari game tersebut.
 
 \section{\emph{Blockchain}}
 \label{sec:blockchain}
-Teknologi blockchain adalah mekanisme database canggih yang memungkinkan berbagi informasi yang transparan di dalam jaringan bisnis.
-Basis data blockchain menyimpan data dalam blok yang terhubung satu sama lain dalam sebuah rantai. Data tersebut konsisten secara kronologis
-karena tidak dapat dihapus atau dimodifikasi tanpa persetujuan dari jaringan. Sebagai hasilnya, teknologi blockchain dapat digunakan untuk
-membuat buku besar tidak dapat diubah atau immutable untuk melacak pesanan, pembayaran, akun, dan transaksi lainnya. Sistem ini memiliki
-mekanisme bawaan yang mencegah entri transaksi yang tidak sah dan menciptakan konsistensi dalam pandangan bersama mengenai transaksi-transaksi tersebut.
+Blockchain adalah sebuah teknologi yang mendasari sistem terdesentralisasi yang memungkinkan pertukaran informasi dan aset digital dengan aman, transparan, dan terverifikasi.
+Dalam konsepnya, \emph{blockchain} adalah jenis database terdistribusi yang memungkinkan para peserta jaringan untuk mencatat, menyimpan, dan memverifikasi transaksi tanpa memerlukan otoritas pusat.
+Teknologi ini telah menarik minat dari berbagai sektor, termasuk keuangan, logistik, kesehatan, energi, dan banyak lagi, karena memiliki potensi untuk mengatasi masalah keamanan, transparansi,
+dan efisiensi dalam sistem tradisional. \parencite{nakamoto2008bitcoin}
 
-Untuk mengenal \emph{Blockchain}, dapat dimulai dari pemahaman dari pengertian yang paling bisa diterima,
-Menurut Layman, \emph{Blockchain} adalah jaringan yang terus berkembang, aman, dan dibagikan sistem pencatatan
-di mana setiap pengguna data memegang salinan catatan, yang hanya dapat diperbarui jika semua pihak yang
-terlibat dalam suatu transaksi setuju untuk memperbarui. Sedangkan secara teknisnya, \emph{Blockchain} adalah buku besar
-terdistribusi peer-to-peer yang aman secara kriptografis, hanya ditambahkan, tidak dapat diubah (sangat sulit untuk perubahan),
-dan hanya dapat diperbarui melalui konsensus atau kesepakatan seluruh pihak.
+Salah satu karakteristik utama dari \emph{blockchain} adalah sifat terdistribusinya. Artinya, database \emph{blockchain} dikelola oleh jaringan peer-to-peer yang terdiri dari berbagai peserta yang saling berinteraksi
+tanpa otoritas pusat yang mengendalikan seluruh jaringan. Setiap peserta dalam jaringan memiliki salinan lengkap dari database yang diperbarui secara real-time. Hal ini memberikan keamanan dan ketahanan
+yang tinggi karena tidak ada satu titik kegagalan tunggal yang dapat menyebabkan kegagalan seluruh sistem.
 
-Gravitasi merupakan \lipsum[1]
+Struktur dasar dari \emph{blockchain} adalah serangkaian blok yang saling terhubung melalui kriptografi. Setiap blok berisi sejumlah transaksi atau data yang telah diverifikasi dan ditandatangani secara digital.
+Setiap kali ada transaksi baru atau perubahan data, blok baru akan ditambahkan ke rantai, menciptakan jejak waktu dan konsistensi kronologis. Kunci keamanan dalam \emph{blockchain} adalah hash, yaitu fungsi
+kriptografi yang menghasilkan nilai unik untuk setiap blok, serta tautan ke blok sebelumnya.
+
+Mekanisme konsensus adalah bagian penting dalam \emph{blockchain} untuk mencapai kesepakatan tentang keabsahan transaksi dan menjaga integritas jaringan. Beberapa mekanisme konsensus yang umum digunakan
+termasuk Proof of Work (PoW), Proof of Stake (PoS), dan Delegated Proof of Stake (DPoS). Mekanisme ini memastikan bahwa para peserta dalam jaringan mencapai kesepakatan sebelum transaksi atau perubahan data dapat dianggap sah. \parencite{swan2015blockchain}
+
+Keuntungan utama dari \emph{blockchain} meliputi transparansi, keamanan, dan efisiensi. Transparansi terjadi karena semua transaksi yang terjadi di dalam \emph{blockchain} dapat dilihat oleh semua peserta jaringan,
+mengurangi risiko manipulasi dan kecurangan. Keamanan terjadi karena setiap transaksi harus diverifikasi oleh jaringan secara kolektif, dan setiap blok dalam rantai memiliki tautan dengan blok sebelumnya menggunakan kriptografi.
+Efisiensi terjadi karena tidak ada perantara atau otoritas pusat yang memperlambat proses transaksi, sehingga memungkinkan pertukaran aset dan informasi secara langsung antara para peserta.
+
+Meskipun \emph{blockchain} pertama kali dikenal melalui Bitcoin, cryptocurrency pertama yang dibangun di atas teknologi ini, namun sekarang \emph{blockchain} digunakan dalam berbagai konteks dan aplikasi.
+Selain transaksi keuangan, \emph{blockchain} juga digunakan dalam pengelolaan rantai pasok, pemilu elektronik, manajemen data medis, sertifikasi aset digital, dan banyak lagi.
+Dengan menerapkan prinsip-prinsip desentralisasi, transparansi, dan keamanan, \emph{blockchain} menghadirkan potensi untuk mengubah cara kita mempertukarkan nilai dan membangun sistem yang lebih efisien dan aman. \parencite{tapscott2016blockchain}
 
 \section{\emph{Ethereum}}
-\emph{Ethereum} adalah jaringan mesin virtual peer-to-peer yang dapat digunakan oleh pengembang mana pun untuk menjalankan aplikasi
-terdistribusi (Dapps). Program komputer ini dapat berbentuk apa saja, tetapi jaringan dioptimalkan untuk menjalankan aturan yang
-berjalan secara otomatis ketika kondisi tertentu terpenuhi, seperti kontrak. Ethereum menggunakan \emph{Blockchain} publiknya sendiri yang
-terdesentralisasi untuk menyimpan, mengeksekusi, dan melindungi kontrak ini secara kriptografis. Setiap komputer di jaringan ini akan
-mengunduh mesin virtual kecil untuk disinkronkan dengan \emph{Blockchain Ethereum} dan tetap tersedia untuk menjalankan kontrak.
-Jaringan komputer terdistribusi ini dengan mudah menyediakan keamanan, keandalan, dan daya komputasi yang diperlukan untuk melaksanakan
-pengaturan yang dirancang. \emph{Blockchain Ethereum} pun juga dapat dicari secara publik
+\emph{Ethereum} adalah sebuah platform \emph{blockchain} terdesentralisasi yang memungkinkan pengembangan dan eksekusi aplikasi terdistribusi yang disebut smart contract. Dikembangkan oleh Vitalik Buterin pada tahun 2013,
+\emph{Ethereum} memperluas konsep dasar \emph{blockchain} dengan memperkenalkan kemampuan untuk menjalankan kode pemrograman yang kompleks di dalam \emph{blockchain}. Platform ini menggunakan mata uang digital yang disebut \emph{Ether (ETH)}
+untuk memfasilitasi transaksi dan menjalankan \emph{smart contract}. \parencite{wood2014ethereum}
+
+\emph{Smart contract} di \emph{Ethereum} adalah program komputer yang dieksekusi secara otomatis ketika kondisi yang telah ditentukan terpenuhi. Mereka memungkinkan pihak-pihak yang terlibat dalam sebuah kesepakatan untuk menjalankan
+transaksi atau interaksi bisnis tanpa memerlukan perantara. Dengan demikian, \emph{Ethereum} memungkinkan pelaksanaan kontrak yang transparan, terotomatisasi, dan tidak dapat diubah. \parencite{antonsopoulos2018mastering}
+
+Salah satu fitur utama \emph{Ethereum} adalah Turing-completeness, yang berarti platform ini dapat menjalankan hampir semua jenis aplikasi terdistribusi. Hal ini memungkinkan pengembang untuk membangun aplikasi yang lebih kompleks dan beragam,
+termasuk permainan, pasar digital, sistem keuangan terdesentralisasi, identitas digital, dan banyak lagi. \parencite{burniske2019ethereum}
+
+\emph{Ether (ETH)} adalah mata uang digital yang digunakan di dalam jaringan \emph{Ethereum}. \emph{Ether} tidak hanya berfungsi sebagai alat pembayaran dalam transaksi, tetapi juga digunakan untuk menjalankan \emph{smart contract}.
+Setiap kali \emph{smart contract} dieksekusi, pemilik \emph{smart contract} harus membayar biaya dalam bentuk \emph{Ether} yang dikenal sebagai gas. Biaya gas ini membantu mencegah serangan spam dan memastikan bahwa pengguna
+platform menggunakan sumber daya jaringan dengan bijak. \parencite{diedrich2017ethereum}
+
+Selain itu, \emph{Ethereum} juga memiliki kemampuan untuk menciptakan token \emph{ERC-20}, yang memungkinkan pengguna untuk membuat dan mengelola token mereka sendiri di dalam ekosistem \emph{Ethereum}. Token ini digunakan untuk berbagai tujuan,
+termasuk dalam ICO (Initial Coin Offering) sebagai sarana penggalangan dana untuk proyek baru, atau sebagai aset digital yang dapat diperdagangkan di bursa kripto.
+
+\emph{Ethereum} juga mendukung konsep DAO (\emph{Decentralized Autonomous Organization}), yang memungkinkan komunitas untuk mengorganisir diri mereka sendiri dan mengambil keputusan berdasarkan prinsip demokratis dengan menggunakan \emph{smart contract}.
+DAO memungkinkan anggota komunitas untuk memiliki suara dalam pengelolaan dan penggunaan sumber daya kolektif tanpa keberadaan otoritas pusat. \parencite{ozer2018ethereum}
 
 \section{\emph{Smart Contract}}
 
-"\emph{Smart contract}" (kontrak cerdas) adalah program yang disimpan di dalam \emph{blockchain} dan dijalankan ketika
-kondisi-kondisi yang telah ditentukan terpenuhi. Umumnya, \emph{smart contract} digunakan untuk mengotomatisasi
-pelaksanaan suatu kesepakatan agar semua peserta dapat segera memastikan hasilnya, tanpa ada keterlibatan pihak
-perantara atau kehilangan waktu. \emph{Smart contract} juga dapat mengotomatisasi alur kerja dengan memicu tindakan
-berikutnya ketika kondisi yang telah ditetapkan terpenuhi.
+\emph{Smart contract} adalah program komputer yang berjalan secara otomatis ketika kondisi yang telah ditentukan terpenuhi. Mereka beroperasi di dalam platform \emph{blockchain}, seperti \emph{Ethereum}, dan berfungsi untuk mengeksekusi
+transaksi atau interaksi bisnis tanpa memerlukan perantara. \parencite{antonsopoulos2018mastering}
 
-Kontrak pada dasarnya merupakan cara untuk membentuk kesepakatan persetujuan terhadap suatu hal (Szabo, 1996).
-Kontrak secara umum digunakan untuk keperluan dalam membangun protokol persetujuan terhadap suatu hubungan yang dibentuk
-oleh dua pihak individu/kelompok atau lebih. Kontrak akan dibangun oleh dua orang atau lebih dengan menggunakan bantuan
-supervisi dari pihak ketiga yang dianggap bisa dipercaya. Supervisi ini sangat penting untuk dimiliki untuk menghindari adanya
-manipulasi oleh salah satu pihak terhadap kontrak yang dibentuk. Seiring dengan perkembangan teknologi, terbentuk suatu konsep
-kontrak baru yang bernama \emph{Smart Contract}.
+\emph{Smart contract} menggunakan bahasa pemrograman yang telah ditentukan, seperti \emph{Solidity} pada \emph{Ethereum}, untuk menggambarkan logika bisnis yang ingin dijalankan. Mereka menyimpan perjanjian atau kesepakatan antara
+pihak-pihak yang terlibat dan mengatur aliran dana atau aset digital. Setiap kali kondisi yang telah ditentukan terpenuhi, \emph{smart contract} secara otomatis menginisiasi tindakan yang telah ditetapkan.
+
+Keuntungan utama dari \emph{smart contract} adalah keandalan dan keamanan yang tinggi. Karena mereka dieksekusi di dalam platform \emph{blockchain}, setiap transaksi dan tindakan yang dilakukan oleh \emph{smart contract}
+tercatat secara permanen dan tidak dapat diubah. Ini memastikan transparansi dan meminimalkan risiko manipulasi atau kecurangan.
+
+Selain itu, \emph{smart contract} juga menghilangkan kebutuhan akan perantara atau pihak ketiga dalam transaksi bisnis. Dengan mengotomatiskan proses, \emph{smart contract} mengurangi biaya dan waktu yang terlibat dalam penyelesaian transaksi.
+Mereka juga meningkatkan kepercayaan antara pihak-pihak yang terlibat karena semua detail dan ketentuan kesepakatan tercatat dengan jelas di dalam kode program.
+
+Namun, penting untuk memperhatikan bahwa \emph{smart contract} tidak sempurna dan masih dapat rentan terhadap kerentanan atau kesalahan dalam kode program. Karena itu, pengembang dan pengguna \emph{smart contract} perlu melakukan pengujian yang
+cermat dan perhatian terhadap aspek keamanan. \parencite{burniske2019ethereum}
 
 \section{\emph{Ethereum Transaction}}
 
@@ -74,21 +97,93 @@ pribadinya (Prusty, 2017)
 
 \section{\emph{InterPlanetary File System}}
 
-IPFS adalah sekumpulan protokol modular untuk mengatur dan mentransfer data, yang dirancang dari awal dengan prinsip-prinsip
-addressing konten dan jaringan peer-to-peer. Karena IPFS bersifat open-source, terdapat beberapa implementasi dari IPFS.
-Meskipun IPFS memiliki lebih dari satu kasus penggunaan, kasus penggunaan utamanya adalah untuk menerbitkan data
-(file, direktori, situs web, dll.) secara terdesentralisasi.
+\emph{IPFS (InterPlanetary File System)} adalah sebuah protokol dan sistem distribusi file yang dirancang untuk menyimpan dan
+mengakses konten secara terdesentralisasi. Tujuan utama dari IPFS adalah untuk mengatasi beberapa keterbatasan yang ada dalam sistem penyimpanan
+file tradisional, seperti ketergantungan pada server pusat, keterbatasan bandwidth, dan risiko kehilangan data.
 
-IPFS adalah jaringan terbuka, terdistribusi, dan partisipatif yang mengurangi silo data dari server terpusat, membuat 
-IPFS lebih tangguh daripada sistem tradisional. Tidak ada entitas atau individu tunggal yang mengendalikan, mengelola, 
-atau memiliki IPFS; sebaliknya, ini adalah proyek yang dijaga oleh komunitas dengan beberapa implementasi dari protokol, 
-beberapa alat dan aplikasi yang memanfaatkan protokol tersebut, dan beberapa pengguna dan organisasi yang berkontribusi 
-pada desain dan pengembangannya.
+Dalam \emph{IPFS}, setiap file dan blok data diberikan alamat yang unik berdasarkan kontennya. Alih-alih menggunakan alamat berbasis lokasi,
+seperti \emph{URL} dalam sistem web tradisional, \emph{IPFS} menggunakan alamat berbasis konten yang disebut \emph{CID (Content Identifier)}.
+Hal ini memungkinkan pengguna untuk mengakses konten secara langsung dari jaringan IPFS tanpa bergantung pada lokasi fisik file tersebut disimpan. \parencite{benet2014ipfs}
 
-IPFS menyediakan akses yang lebih cepat ke data dengan memungkinkannya direplikasi dan diambil dari beberapa lokasi, 
-serta memungkinkan pengguna untuk mengakses data dari lokasi terdekat menggunakan addressing konten daripada addressing berbasis lokasi. 
-Dengan kata lain, karena data dapat diakses berdasarkan kontennya, sebuah node pada jaringan dapat mengambil data tersebut dari node lain 
-di jaringan yang memiliki data; dengan demikian, masalah kinerja seperti laten dapat dikurangi.
+\emph{IPFS} menggunakan konsep distribusi \emph{peer-to-peer}, di mana setiap peserta dalam jaringan \emph{IPFS} berfungsi sebagai titik penyimpanan dan penyebaran konten.
+Setiap kali pengguna meminta file, \emph{IPFS} mencari konten tersebut secara otomatis dari \emph{node} yang paling dekat dan mempercepat proses pengunduhan dengan memanfaatkan koneksi \emph{peer-to-peer}.
+
+Keuntungan dari \emph{IPFS} termasuk keandalan dan ketahanan terhadap kehilangan data. Karena setiap file mendapatkan alamat berdasarkan kontennya, jika ada duplikat file yang identik di jaringan,
+maka file tersebut hanya akan disimpan satu kali. Selain itu, \emph{IPFS} juga mendukung mekanisme verifikasi integritas data menggunakan teknologi hash. \parencite{batiz2018mastering}
+
+\section{\emph{Solidity}}
+
+\emph{Solidity} adalah bahasa pemrograman yang digunakan untuk menulis \emph{smart contract} di platform \emph{Ethereum}. \emph{Solidity} dirancang untuk menggabungkan fitur-fitur dari bahasa
+pemrograman seperti \emph{JavaScript} dan \emph{C++} serta memperluas kemampuan mereka untuk memenuhi kebutuhan pengembangan aplikasi terdesentralisasi.
+
+\emph{Solidity} mendukung pengembangan aplikasi yang berjalan di atas platform Ethereum dengan menggunakan smart contract. Dalam \emph{Solidity}, pengembang dapat mendefinisikan struktur data,
+fungsi, dan logika bisnis yang akan dieksekusi oleh \emph{smart contract}. Pengembang juga dapat menetapkan aturan untuk penggunaan aset digital, seperti token ERC-20 atau ERC-721, serta mengatur
+interaksi antara \emph{smart contract} dan pengguna atau \emph{smart contract} lainnya. \parencite{noauthor_solidity_nodate}
+
+Kelebihan \emph{Solidity} adalah kemampuannya untuk mengelola aset digital dan melaksanakan perjanjian bisnis secara aman dan andal. \emph{Solidity} memastikan bahwa \emph{smart contract}
+berjalan sesuai dengan yang diharapkan dan mencegah terjadinya manipulasi atau kegagalan sistem. Selain itu, \emph{Solidity} juga menyediakan fasilitas pengujian dan pemecahan masalah
+yang memungkinkan pengembang untuk mengidentifikasi dan memperbaiki kesalahan dalam kode \emph{smart contract}. \emph{Solidity} memiliki sintaks yang mirip dengan bahasa pemrograman lainnya s
+eperti \emph{JavaScript}, sehingga pengembang dengan pengetahuan pemrograman umum dapat dengan mudah mempelajari dan menggunakan bahasa ini.
+
+Solidity mendukung berbagai fitur yang penting dalam pengembangan smart contract. Beberapa fitur tersebut antara lain:
+\begin{enumerate}
+  \item Tipe Data: Solidity mendukung berbagai jenis tipe data seperti bilangan bulat, string, boolean, array, dan struktur data yang memungkinkan pengembang untuk mengelola dan memanipulasi data dengan lebih efisien.
+  \item \emph{Contract}: Solidity memungkinkan pengembang untuk mendefinisikan \emph{smart contract} yang berfungsi sebagai entitas utama dalam aplikasi terdesentralisasi. \emph{Smart contract} ini dapat mengatur logika bisnis,
+        menyimpan data, mengelola aset digital, dan berinteraksi dengan \emph{smart contract} lainnya.
+  \item Fungsi dan Modifikator: \emph{Solidity} memungkinkan pengembang untuk mendefinisikan fungsi dan modifikator yang memungkinkan pengontrolan akses, verifikasi parameter, dan menambahkan logika tambahan dalam eksekusi \emph{smart contract}.
+\end{enumerate}
+
+Solidity adalah bahasa pemrograman yang matang dan terus berkembang dengan komunitas pengembang yang aktif. Dukungan yang kuat dari komunitas Ethereum dan dokumentasi yang kaya menjadikan
+Solidity sebagai pilihan yang populer dalam pengembangan aplikasi terdesentralisasi.
+
+\section{\emph{Crypto Wallet}}
+Crypto wallet, atau dompet kripto, adalah sebuah perangkat lunak atau layanan yang digunakan untuk menyimpan, mengelola, dan berinteraksi dengan aset kripto. Dalam dunia kriptografi, aset kripto seperti Bitcoin, Ethereum, atau altcoin
+lainnya tidak benar-benar disimpan dalam bentuk fisik seperti uang tunai konvensional. Sebagai gantinya, kepemilikan aset kripto ini dicatat dalam bentuk transaksi digital yang tercatat di dalam blockchain.
+
+Crypto wallet berfungsi sebagai alat untuk mengakses, mengelola, dan mengendalikan aset kripto pengguna. Dengan menggunakan crypto wallet, pengguna dapat melakukan transaksi seperti mengirim dan menerima aset kripto, melacak saldo aset,
+dan memonitor riwayat transaksi. Crypto wallet juga dapat memberikan fitur keamanan seperti enkripsi data dan tanda tangan digital untuk memastikan keamanan dan keotentikan transaksi. \parencite{noauthor_introduction_crypto_nodate}
+
+Selain itu, crypto wallet juga menyediakan alamat publik yang dapat digunakan oleh orang lain untuk mengirimkan aset kripto ke wallet tersebut. Alamat publik ini bersifat terbuka dan dapat dibagikan kepada siapa pun tanpa mengungkapkan
+informasi rahasia seperti kunci pribadi.
+
+Seiring dengan berkembangnya industri kripto, crypto wallet juga telah mengalami evolusi. Saat ini, ada banyak jenis wallet yang muncul dengan fitur-fitur yang berbeda. Misalnya, beberapa wallet memiliki fitur pertukaran terintegrasi
+yang memungkinkan pengguna menukar satu jenis aset kripto dengan yang lain. Ada juga wallet yang mendukung staking, yaitu mengunci aset kripto untuk mendapatkan imbalan.
+
+Keamanan crypto wallet sangat penting, karena jika kunci pribadi dicuri atau hilang, akses ke aset kripto tidak dapat dipulihkan. Oleh karena itu, pengguna crypto wallet perlu mengambil langkah-langkah keamanan yang tepat, seperti
+menggunakan wallet resmi yang terpercaya, membuat cadangan kunci pribadi (backup), dan mengaktifkan fitur keamanan tambahan seperti otentikasi dua faktor (2FA). \parencite{antonopoulos2014mastering}
+
+Pemilihan jenis crypto wallet tergantung pada preferensi pengguna, kebutuhan keamanan, dan kenyamanan akses. Penting untuk memilih wallet yang andal, aman, dan kompatibel dengan aset kripto yang ingin Anda simpan.
+
+\section{\emph{Unreal Engine 5}}
+Unreal Engine 5 adalah sebuah mesin permainan (game engine) yang dikembangkan oleh Epic Games. Ini adalah generasi terbaru dari Unreal Engine, yang dirancang untuk memberikan pengalaman pengembangan dan visual yang luar biasa.
+Unreal Engine 5 memiliki sejumlah fitur baru yang memungkinkan pengembang untuk menciptakan pengalaman permainan yang lebih realistis dan imersif.
+
+Salah satu fitur unggulan dari Unreal Engine 5 adalah "Nanite", teknologi rendering yang memungkinkan penggunaan geometri film-quality secara real-time. Nanite memungkinkan pengembang untuk menggunakan model 3D yang sangat detail
+dengan jutaan poligon tanpa perlu khawatir tentang kinerja permainan. Ini memberikan kebebasan yang lebih besar dalam menciptakan lingkungan yang kaya dan mendetail.
+
+Selain itu, Unreal Engine 5 juga menghadirkan "Lumen", sebuah sistem pencahayaan global yang dinamis. Lumen memungkinkan pencahayaan yang realistis dan interaksi cahaya yang kompleks dalam permainan. Dengan Lumen, pengembang dapat
+menciptakan efek pencahayaan yang realistis seperti bayangan dinamis, refleksi, dan pencahayaan global yang real-time. \parencite{unrealarchitecture}
+
+Unreal Engine 5 juga menyediakan alat pengembangan yang lebih mudah digunakan, termasuk alat visual scripting yang kuat yang disebut "Blueprints", yang memungkinkan pengembang untuk membuat logika permainan tanpa harus menulis kode.
+Ini membuat pengembangan permainan menjadi lebih cepat dan lebih mudah, terutama bagi pengembang yang tidak memiliki latar belakang pemrograman yang mendalam.
+
+Dengan kombinasi fitur-fitur ini, Unreal Engine 5 memberikan platform yang kuat bagi pengembang permainan untuk menciptakan pengalaman permainan yang mengesankan dengan visual yang spektakuler dan gameplay yang mendalam. \parencite{unrealengine}
+
+Unreal Engine 5 adalah salah satu mesin permainan yang berperan penting dalam pembangunan dan pengembangan metaverse. Metaverse adalah sebuah konsep yang merujuk pada dunia virtual yang terhubung secara global,
+di mana pengguna dapat berinteraksi dengan lingkungan digital yang luas, bertemu dengan orang lain, dan menjalankan berbagai aktivitas secara virtual.
+
+Unreal Engine 5 menyediakan sejumlah fitur yang mendukung pembangunan metaverse. Salah satu fitur utama adalah "World Partition", yang memungkinkan pengembangan lingkungan digital yang sangat luas tanpa mengorbankan kinerja permainan.
+Dengan fitur ini, dunia virtual yang luas dapat dibagi menjadi beberapa bagian yang dapat dimuat secara terpisah, sehingga hanya bagian yang relevan yang dimuat ke memori saat diperlukan. Hal ini memungkinkan lingkungan metaverse yang
+lebih besar dan lebih padat dengan detail tanpa mengorbankan kinerja permainan.
+
+Selain itu, Unreal Engine 5 juga mendukung teknologi streaming yang canggih, yang memungkinkan pengguna untuk mengalami lingkungan metaverse yang terhubung secara mulus tanpa adanya waktu unduh yang lama. Dengan menggunakan teknologi
+streaming ini, konten dapat dimuat secara dinamis saat pengguna menjelajahi metaverse, memungkinkan akses instan ke lingkungan baru dan interaksi yang lancar.
+
+Fitur-fitur visual Unreal Engine 5 juga sangat relevan dalam menciptakan pengalaman metaverse yang menarik. Misalnya, Nanite yang telah disebutkan sebelumnya memungkinkan penggunaan model 3D yang sangat detail, memperkaya lingkungan
+metaverse dengan objek-objek yang realistis. Selain itu, Lumen juga membantu menciptakan efek pencahayaan yang realistis, memberikan atmosfer yang mendalam dan nuansa yang kaya pada lingkungan metaverse.
+
+Dengan kombinasi dari semua fitur ini, Unreal Engine 5 memberikan alat yang kuat bagi pengembang untuk membangun metaverse yang menarik, interaktif, dan memikat. Dalam metaverse, pengguna dapat menjelajahi dunia virtual yang luas,
+berinteraksi dengan objek dan orang lain, serta melakukan berbagai aktivitas, seperti bermain permainan, menghadiri acara, dan bahkan melakukan transaksi ekonomi digital.
 
 \section{\emph{Ethereum Virtual Machine}}
 
@@ -97,6 +192,66 @@ Proses dibalik berjalannya \emph{Smart Contract} pada \emph{Ethereum} diatur dal
 Transaksi transfer nilai sederhana dari satu EOA ke EOA lainnya tidak perlu melibatkannya, tetapi yang lainnya akan melibatkan pembaruan status yang dihitung oleh \emph{EVM}.
 Pada tingkat tinggi, EVM yang berjalan di \emph{Blockchain Ethereum} dapat dianggap sebagai komputer terdesentralisasi global yang berisi jutaan objek yang dapat dieksekusi,
 masing-masing dengan penyimpanan data permanennya sendiri.
+
+\section{\emph{ERC-721}}
+ERC-721, yang juga dikenal sebagai Non-Fungible Token (NFT) Standard, adalah sebuah standar kontrak pintar (smart contract) yang dikembangkan di jaringan Ethereum.
+Standar ini memungkinkan pembuatan dan pengelolaan token non-fungible, yang merupakan jenis token digital yang unik dan tidak dapat saling dipertukarkan satu sama lain.
+ERC-721 memainkan peran penting dalam memfasilitasi ekonomi digital dan pasar NFT yang sedang berkembang.
+
+Token non-fungible adalah token yang mewakili kepemilikan unik atas suatu aset digital atau fisik. Berbeda dengan token kripto fungible seperti Bitcoin atau Ethereum,
+yang dapat dipertukarkan satu sama lain dengan nilai yang sama, setiap token non-fungible memiliki karakteristik, nilai, dan identitas yang berbeda. Misalnya,
+token non-fungible dapat mewakili seni digital, koleksi digital, barang-barang virtual dalam permainan, sertifikat kepemilikan, atau bahkan aset fisik yang diwakili secara digital.
+
+Salah satu fitur utama dari ERC-721 adalah kemampuan untuk menciptakan dan melacak kepemilikan aset digital unik. Setiap token ERC-721 memiliki nomor identifikasi
+unik yang disebut token ID. Token ID ini membedakan setiap token dan memastikan bahwa tidak ada token lain dalam kontrak ERC-721 yang memiliki token ID yang sama.
+Dengan menggunakan token ID, pengguna dapat dengan mudah mengidentifikasi dan membuktikan kepemilikan mereka atas aset digital yang direpresentasikan oleh token tersebut.
+
+Selain itu, token ERC-721 memungkinkan transfer kepemilikan antara pengguna. Pemilik token dapat mentransfer token ERC-721 kepada orang lain, baik melalui proses
+penjualan, pertukaran, atau hadiah. Dalam kontrak ERC-721, terdapat fungsi-fungsi yang mendukung transfer kepemilikan, seperti fungsi transferFrom, approve, dan safeTransferFrom.
+Hal ini memungkinkan terjadinya perdagangan dan pertukaran aset digital unik antara pengguna, menciptakan pasar yang dinamis dan ekonomi yang berkembang di dalam ekosistem NFT.
+
+Selain itu, ERC-721 menyediakan fungsi-fungsi tambahan untuk mengelola dan mengakses informasi terkait dengan token non-fungible. Dalam kontrak ERC-721,
+pengembang dapat menyertakan metadata yang menggambarkan atribut-atribut unik dari aset yang direpresentasikan oleh token. Metadata ini dapat berisi informasi seperti
+nama aset, deskripsi, gambar, URL, atau atribut khusus lainnya. Dengan adanya metadata, pengguna dapat dengan mudah mengeksplorasi dan memahami karakteristik serta keaslian aset digital yang diwakili oleh token ERC-721.
+
+Standar ERC-721 telah digunakan dalam berbagai aplikasi dan platform NFT yang populer. Misalnya, aplikasi pasar NFT seperti OpenSea, Rarible, dan SuperRare menggunakan
+standar ini untuk memfasilitasi perdagangan dan pertukaran aset digital. Selain itu, permainan blockchain seperti CryptoKitties dan Decentraland juga menggunakan
+ERC-721 untuk mewakili barang-barang unik dalam permainan. Standar ini memberikan kerangka kerja yang jelas dan terstandarisasi bagi pengembang untuk menciptakan dan mengelola token NFT secara efisien di jaringan Ethereum. \parencite{erc721}
+
+\section{Minting Token}
+Dalam konteks smart contract, "minting token" merujuk pada proses penciptaan dan penerbitan token baru di jaringan blockchain. Proses ini penting dalam menciptakan dan memperluas ekosistem token yang digunakan dalam aplikasi dan platform blockchain.
+
+Proses minting token biasanya dilakukan menggunakan smart contract yang mengikuti standar token seperti ERC-20 atau ERC-721 di jaringan Ethereum. Kontrak pintar ini memuat fungsi khusus yang memungkinkan pemanggilan untuk menciptakan token baru dan
+menetapkan atribut-atributnya. Proses minting ini biasanya dilakukan oleh pemilik smart contract atau oleh pihak lain yang memiliki hak akses dan wewenang yang sesuai.
+
+Dalam smart contract berstandar ERC-20, fungsi mint atau fungsi serupa digunakan untuk menciptakan token baru. Fungsi ini menerima parameter seperti jumlah token yang akan dicetak dan alamat pemilik awal token. Setelah fungsi tersebut dipanggil,
+smart contract akan menciptakan token baru dan menetapkan atribut-atributnya, seperti simbol, nama, jumlah total pasokan, dan pemilik awal.
+
+Dalam smart contract berstandar ERC-721, proses minting token juga melibatkan fungsi mint atau fungsi serupa. Namun, dalam konteks token non-fungible (NFT), setiap token memiliki identitas dan karakteristik yang unik. Oleh karena itu, proses
+minting dalam smart contract ERC-721 melibatkan penetapan atribut khusus untuk setiap token yang diciptakan, seperti metadata yang menggambarkan aset yang direpresentasikan oleh token tersebut.
+
+Selama proses minting token, catatan transaksi yang mencatat penciptaan dan penerbitan token baru juga dicatat secara permanen dalam blockchain. Ini memastikan keaslian dan jejak kepemilikan token tersebut. Informasi ini dapat diakses dan
+diverifikasi oleh semua peserta jaringan, memberikan transparansi dan kepercayaan dalam ekosistem token.
+
+Proses minting token memiliki implikasi yang luas dalam ekosistem blockchain. Ini memungkinkan penciptaan token baru untuk digunakan dalam berbagai aplikasi, seperti aplikasi keuangan, pasar NFT, game blockchain, identitas digital, dan banyak lagi.
+Dengan minting token, pengembang dapat menciptakan ekonomi digital yang dinamis dan inovatif di atas teknologi blockchain. \parencite{erc721}
+
+\section{Metaverse}
+Metaverse adalah istilah yang digunakan untuk menggambarkan dunia virtual yang terhubung secara digital, yang dihuni oleh pengguna dari berbagai lokasi di seluruh dunia. Konsep Metaverse mirip dengan realitas virtual, tetapi dengan tambahan
+elemen interaktif yang memungkinkan pengguna untuk berinteraksi dengan lingkungan virtual dan antara satu sama lain.
+
+Metaverse bertujuan untuk menciptakan pengalaman yang imersif dan menyatu dengan menggunakan teknologi seperti realitas virtual (VR), augmented reality (AR), dan mixed reality (MR). Di dalam Metaverse, pengguna dapat mengontrol
+avatar mereka, menjelajahi lingkungan virtual, berinteraksi dengan objek dan orang lain, serta terlibat dalam berbagai aktivitas, seperti bermain game, berkomunikasi, berbelanja, atau bahkan bekerja. \parencite{kietzmann2011social}
+
+Konsep Metaverse telah mendapatkan perhatian yang signifikan dalam beberapa tahun terakhir, terutama dengan perkembangan teknologi seperti blockchain, digital assets,
+dan NFT (Non-Fungible Tokens). Teknologi-teknologi ini memungkinkan pembangunan dan pertukaran aset digital di dalam Metaverse, termasuk properti virtual, koleksi seni digital, karakter game, dan banyak lagi.
+Pengguna dapat memiliki, memperdagangkan, dan menggunakannya di dalam lingkungan Metaverse.
+
+Selain itu, Metaverse juga mencakup elemen sosial yang kuat. Pengguna dapat berinteraksi dengan pengguna lainnya melalui avatar mereka, berkomunikasi melalui suara atau teks, membentuk komunitas,
+dan bahkan melakukan kegiatan sosial seperti menghadiri konser, pameran seni, atau acara virtual lainnya. Konsep Metaverse mendukung kolaborasi, eksplorasi, dan kreasi bersama di dalam dunia virtual.
+
+Namun, perlu dicatat bahwa saat ini, Metaverse masih dalam tahap perkembangan dan implementasi yang terbatas. Ada berbagai platform dan proyek yang berusaha membangun dan mewujudkan visi Metaverse,
+seperti Decentraland, Cryptovoxels, Somnium Space, dan lainnya. Perkembangan teknologi dan adopsi yang lebih luas akan menjadi kunci untuk mewujudkan potensi penuh Metaverse di masa depan. \parencite{castronova2005synthetic}
 
 \subsection{Hukum Newton}
 \label{subsec:hukumnewton}
