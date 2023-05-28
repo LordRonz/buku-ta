@@ -296,3 +296,141 @@ Url dari audio yang sudah diupload akan diletakkan kedalam Metadata json, kemudi
 ke web3.storage.
 
 \section{Mint NFT}
+
+Di tahap ini dilakukan proses mint NFT dengan menggunakan \emph{smart contract} yang sudah dideploy sebelumnya.
+Remix IDE sudah menyediakan antarmuka untuk memanggil method-method yang ada di smart contract yang sudah terdeploy.
+
+\begin{figure}[H]
+  \centering
+
+  % Ubah dengan nama file gambar dan ukuran yang akan digunakan
+  \includegraphics[scale=0.3]{gambar/mint-nft.jpg}
+
+  % Ubah dengan keterangan gambar yang diinginkan
+  \caption{Tampilan Remix IDE untuk deployed contracts}
+  \label{fig:mintnft}
+\end{figure}
+
+Dapat juga dicek melalui etherscan. Domain etherscan yang digunakan adalah milik goerli karena wallet yang digunakan juga menggunakan goerli.
+Etherscan Goerli adalah sebuah platform yang memberikan berbagai macam layanan dan utilitas yang berguna dalam pengembangan smart contract di jaringan Goerli, yang merupakan salah satu jaringan pengujian pada Ethereum. Platform ini menyediakan berbagai fitur yang memungkinkan pengembang untuk menjelajahi, memantau, dan menganalisis smart contract dan transaksi yang terjadi di jaringan Goerli.
+
+Salah satu kegunaan utama dari Etherscan Goerli adalah untuk menjelajahi dan menganalisis smart contract. Pengembang dapat menggunakan platform ini untuk melihat detail dari suatu smart contract, termasuk kode sumbernya, fungsi-fungsi yang ada, dan variabel-variabel yang digunakan. Informasi ini sangat penting dalam memahami dan memeriksa kecerdasan kontrak sebelum diterapkan di jaringan Ethereum utama. Selain itu, Etherscan Goerli juga menyediakan alat untuk memeriksa riwayat transaksi, sehingga pengembang dapat melacak aliran nilai dan interaksi yang terjadi pada suatu smart contract.
+
+Selain menjelajahi dan menganalisis smart contract, Etherscan Goerli juga menyediakan utilitas untuk memantau dan melacak kinerja dan keadaan jaringan Goerli. Pengembang dapat memeriksa informasi tentang blok terbaru, hash blok, kecepatan transaksi, dan pemegang akun. Ini membantu pengembang dalam mengamati performa jaringan dan memastikan bahwa transaksi yang mereka kirimkan berjalan dengan baik di jaringan pengujian.
+
+Selain itu, Etherscan Goerli juga memberikan fitur untuk memverifikasi smart contract. Pengembang dapat mengirimkan kode sumber smart contract mereka ke platform ini untuk diverifikasi. Dengan melakukan verifikasi, pengembang dapat memastikan bahwa smart contract yang mereka kembangkan sesuai dengan apa yang diharapkan, dan memastikan bahwa tidak ada perubahan yang tidak diinginkan atau malware yang dimasukkan ke dalam kontrak.
+
+Selain fitur-fitur utama di atas, Etherscan Goerli juga menyediakan berbagai informasi terkait dengan jaringan Goerli, seperti harga gas, grafik transaksi, dan pemantauan kontrak yang populer. Semua informasi ini membantu pengembang dalam memperoleh pemahaman yang lebih baik tentang jaringan Goerli dan membantu mereka dalam mengembangkan dan menguji smart contract dengan lebih efektif.
+
+Dalam pengembangan smart contract, Etherscan Goerli memberikan alat yang sangat berharga untuk menjelajahi, memantau, menganalisis, dan memverifikasi smart contract di jaringan Goerli. Dengan menggunakan platform ini, pengembang dapat memperoleh wawasan yang mendalam tentang keadaan jaringan, memeriksa dan memverifikasi kecerdasan kontrak, serta memastikan performa yang baik dalam pengujian smart contract sebelum diterapkan di jaringan Ethereum utama.
+
+\section{Create Unreal Engine 5 Project}
+
+Proyek Unreal Engine 5 dibuat dengan mengikuti serangkaian langkah yang penting dan harus diikuti dengan cermat. Pertama, Unreal Engine 5 diinstal dari situs resmi Epic Games dan memastikan persyaratan sistem yang diperlukan terpenuhi oleh komputer. Setelah diinstal, Unreal Engine Launcher dibuka dan proyek baru dibuat dengan memilih jenis proyek yang sesuai dengan tujuan. Setelah masuk ke Unreal Editor, pengaturan proyek dikonfigurasi seperti resolusi layar, sistem fisika, kontrol input, dan lainnya sesuai kebutuhan.
+
+Selanjutnya, dunia (World) dibuat di mana permainan atau pengalaman berlangsung. Alat bawaan Unreal Engine 5 seperti Landscape Editor digunakan untuk membuat lingkungan yang realistis dengan menambahkan peta, objek, karakter, dan lainnya. Selanjutnya, objek dan karakter dibuat atau diimpor ke dalam proyek. Aset dapat dibuat sendiri atau model 3D yang sudah ada diimpor dalam berbagai format seperti FBX atau OBJ. Setelah itu, animasi, tekstur, suara, dan perilaku yang diinginkan ditambahkan.
+
+Selanjutnya, bahasa pemrograman visual bernama Blueprint digunakan untuk membuat logika permainan. Dengan Blueprint, alur permainan, skrip perilaku objek, pengaturan kamera, penanganan interaksi pemain, dan lainnya dapat dibuat. Jika memiliki pengetahuan dalam pemrograman C++, bahasa ini juga dapat digunakan dalam pengembangan proyek. Efek visual dan suara juga dapat diterapkan menggunakan fitur dan alat bawaan Unreal Engine 5, seperti pencahayaan, partikel, efek cuaca, dan suara latar.
+
+Setelah proyek selesai dibuat, pengujian dan iterasi dilakukan. Proyek dijalankan di Unreal Editor atau mode standalone untuk melihat bagaimana proyek berjalan, bug diidentifikasi dan diperbaiki, serta pengujian dilakukan untuk memastikan kualitas dan kinerja yang baik. Terakhir, setelah proyek selesai dan telah diuji dengan baik, proyek dapat didistribusikan kepada pengguna akhir. Unreal Engine 5 menyediakan berbagai opsi distribusi, termasuk platform PC, konsol, dan virtual reality (VR), sesuai dengan kebutuhan proyek.
+
+Proyek Unreal Engine yang dibuat sederhana saja, namun tetap dapat berinteraksi dengan menggunakan blueprints.
+
+Kemudian perlu juga menambahkan beberapa plugin yang akan digunakan nantinya seperti Runtime Audio Importer, IPFS, dan Emergence.
+
+\subsection{Runtime Audio Importer}
+Runtime Audio Importer adalah sebuah fitur yang memungkinkan pengguna untuk mengimpor audio dalam berbagai format secara langsung saat berjalan. Fitur ini menawarkan kecepatan transkoding yang cepat dan mendukung format audio utama seperti MP3, WAV, FLAC, OGG Vorbis, dan BINK. Selain itu, fitur ini juga mendukung format RAW seperti int8, uint8, int16, uint16, int32, uint32, dan float32.
+
+Runtime Audio Importer memiliki perilaku yang sama dengan gelombang suara biasa, termasuk SoundCue dan MetaSounds (mulai dari versi 5.2). Fitur ini juga secara otomatis mendeteksi format audio yang digunakan dan mendukung fungsionalitas streaming audio. Selain itu, pengguna juga dapat menangkap audio dari perangkat input seperti mikrofon, mengekspor gelombang suara ke file terpisah, dan menggunakan aset suara yang telah diimpor sebelumnya.
+
+Yang menarik, Runtime Audio Importer tidak membutuhkan pustaka statis atau dependensi eksternal tertentu. Fitur ini mendukung semua perangkat yang tersedia seperti Android, iOS, Windows, Mac, Linux, dan sebagainya.
+
+\subsection{Emergence}
+Emergence adalah protokol Web3 yang ditujukan untuk pengembang game, yang terintegrasi dengan mesin permainan seperti Unreal Engine dan Unity melalui SDK berbasis Web3. Emergence memberdayakan pengembang game dengan otentikasi dompet, smart contract, sistem avatar, dan layanan inventaris NFT. Alat yang mudah digunakan dan kreatif memungkinkan pemain untuk masuk dengan mudah menggunakan dompet kripto mereka dan bermain dengan persona pilihan mereka secara transparan. Sementara itu, Emergence memberikan alat kepada pengembang game untuk memanfaatkan item NFT pengguna dan menyematkannya ke dalam permainan mereka secara mulus.
+
+Protokol Emergence menyediakan alat yang diperlukan agar para pencipta dapat membangun dunia-dunia yang interoperabel, di mana pengguna dapat membuat persona berbasis rantai blok mereka sendiri dan memuat avatar, inventaris, dan data ke dalam dunia metaverse pilihan mereka.
+
+Dengan menyediakan alat seperti Layanan Inventaris, para pencipta dapat melihat potensi NFT dari segi utilitas. Bukan hanya dalam desain aslinya, tetapi juga dengan mempertimbangkan penggunaan NFT sebagai GameObjects aktual dalam dunia virtual mereka. Pengembang dapat menggunakan Layanan Inventaris Emergence untuk menyimpan metadata dinamis ke dalam NFT pengguna mereka. Hal ini membuka peluang besar untuk memikirkan tentang gaming berbasis Web3 yang baru dan apa yang dapat dicapai oleh NFT, serta bagaimana NFT tersebut berkembang melalui pengalaman metaverse. NFT lebih dari sekadar PFP (profil foto). Mereka dapat dianggap sebagai objek permainan yang persisten dan interoperabel, membawa inovasi baru dalam penceritaan, interaksi, pengalaman, dan sebagainya.
+
+SDK Emergence menyediakan akses kode tingkat rendah dan tingkat tinggi untuk berinteraksi dengan jaringan EVM (Ethereum Virtual Machine) dan dompet. Mulai dari mengotentikasi pengguna dengan tanda tangan digital yang memungkinkan bentuk otentikasi universal baru, hingga membaca dan menulis ke smart contract. Dengan menyediakan alat seperti Sistem Avatar dan Layanan Inventaris, Emergence memberikan serangkaian fungsi agar pencipta metaverse apa pun dapat dengan mudah memanfaatkan kekuatan Web3.
+
+\section{Integrate Smart Contract with Unreal Engine 5}
+
+Proses integrasi smart contract dengan Unreal Engine 5 ini membutuhkan pengetahuan tentang blueprints. Proses ini dimulai dengan menyiapkan kembali proyek Unreal Engine 5
+Dengan menggunakan plugin Emergence kita dapat menentukan contract dan juga menghubungkan blueprints dengan contracts yang sudah dideploy.
+
+Plugin ini memiliki asset-asset yang akan membantu seperti asset contract dan deployed contract.
+
+\begin{figure}[H]
+  \centering
+
+  % Ubah dengan nama file gambar dan ukuran yang akan digunakan
+  \includegraphics[scale=0.3]{gambar/web3emergence.jpg}
+
+  % Ubah dengan keterangan gambar yang diinginkan
+  \caption{Tampilan Asset yang disediakan Emergence}
+  \label{fig:web3emergence}
+\end{figure}
+
+Emergence contract asset digunakan oleh berbagai metode dan objek sebagai deskriptor antarmuka pemrograman suatu kontrak. Sebagian besar datanya berasal dari ABI (Application Binary Interface) kontrak tersebut.
+
+Aset Kontrak Emergence merujuk pada komponen yang digunakan oleh berbagai metode dan objek dalam ekosistem Emergence untuk menjelaskan antarmuka pemrograman suatu kontrak. Aset ini berfungsi sebagai deskriptor yang memberikan informasi penting tentang struktur kontrak, fungsi, dan data yang terkait. Sebagian besar data yang terkait dengan aset ini berasal dari ABI kontrak, yang mendefinisikan bagaimana kontrak dapat diinteraksikan dan diakses oleh entitas eksternal.
+
+Aset Kontrak Emergence memainkan peran penting dalam memfasilitasi integrasi dan interaksi yang lancar antara berbagai komponen dalam ekosistem Emergence. Dengan memanfaatkan ABI kontrak, pengembang dapat berkomunikasi dan berinteraksi dengan kontrak pintar secara efektif, memungkinkan mereka untuk memanggil fungsi spesifik, mengambil data, dan melakukan operasi lain yang didefinisikan dalam antarmuka kontrak.
+
+Data yang disimpan dalam Aset Kontrak Emergence mencakup informasi seperti tanda tangan fungsi kontrak, parameter masukan dan keluaran, definisi acara, dan metadata lain yang diperlukan untuk berinteraksi dengan kontrak. Data ini memungkinkan komponen lain dalam ekosistem Emergence, seperti kontrak pintar, aplikasi, atau antarmuka pengguna, untuk memahami dan memanfaatkan fungsionalitas yang ditawarkan oleh kontrak.
+
+Secara keseluruhan, Aset Kontrak Emergence berfungsi sebagai deskriptor yang menggambarkan antarmuka pemrograman suatu kontrak dalam ekosistem Emergence. Mereka memungkinkan integrasi, komunikasi, dan interaksi yang lancar dengan kontrak pintar dengan menyediakan informasi penting yang berasal dari ABI kontrak. Dengan memanfaatkan aset ini, pengembang dapat efektif menggunakan fungsionalitas yang ditawarkan oleh kontrak dan membangun aplikasi terdesentralisasi dan layanan inovatif dalam ekosistem Emergence.
+
+\begin{figure}[H]
+  \centering
+
+  % Ubah dengan nama file gambar dan ukuran yang akan digunakan
+  \includegraphics[scale=0.6]{gambar/emergencecontract.png}
+
+  % Ubah dengan keterangan gambar yang diinginkan
+  \caption{Tampilan Asset Kontrak Emergence}
+  \label{fig:emergencecontract}
+\end{figure}
+
+Aset Kontrak Emergence yang Dideploy digunakan oleh berbagai metode dan objek sebagai referensi ke kontrak tertentu yang telah dideploy di dalam blockchain. Aset ini terdiri dari aset Blockchain, aset Kontrak, dan alamat kontrak.
+
+Aset Kontrak Emergence yang Dideploy adalah komponen yang digunakan dalam ekosistem Emergence untuk mengidentifikasi dan berinteraksi dengan kontrak pintar yang telah dideploy di dalam blockchain. Aset ini mencakup informasi yang penting untuk mengarahkan aplikasi atau komponen lain ke kontrak yang tepat untuk berinteraksi dengannya.
+
+Komponen utama dari Aset Kontrak Emergence yang Dideploy adalah aset Blockchain yang merujuk pada blockchain tempat kontrak dideploy, aset Kontrak yang menggambarkan kontrak pintar secara keseluruhan, dan alamat kontrak yang merupakan alamat unik yang menunjukkan lokasi kontrak di dalam blockchain.
+
+Dengan menggunakan Aset Kontrak Emergence yang Dideploy, pengembang dapat dengan mudah mengakses kontrak pintar yang telah dideploy di dalam blockchain. Mereka dapat memanggil fungsi kontrak, membaca dan menulis data, serta berinteraksi dengan kontrak untuk menjalankan logika bisnis yang diinginkan.
+
+Secara keseluruhan, Aset Kontrak Emergence yang Dideploy berfungsi sebagai referensi yang mengarahkan aplikasi atau komponen lain ke kontrak pintar yang telah dideploy di dalam blockchain. Dengan menggunakan informasi yang terkandung dalam aset ini, pengembang dapat secara efisien berinteraksi dengan kontrak pintar dan memanfaatkan fungsionalitas yang ditawarkan oleh kontrak tersebut dalam ekosistem Emergence.
+
+\begin{figure}[H]
+  \centering
+
+  % Ubah dengan nama file gambar dan ukuran yang akan digunakan
+  \includegraphics[scale=0.6]{gambar/emergencedeployedcontract.png}
+
+  % Ubah dengan keterangan gambar yang diinginkan
+  \caption{Tampilan Deployed Contracts dari Emergence}
+  \label{fig:emergencedeployedcontract}
+\end{figure}
+
+Dari asset-asset tersebut akan diread oleh blueprint component dari emergence.
+
+\subsection{Read Method}
+
+\begin{figure}[H]
+  \centering
+
+  % Ubah dengan nama file gambar dan ukuran yang akan digunakan
+  \includegraphics[scale=0.6]{gambar/readmethod.png}
+
+  % Ubah dengan keterangan gambar yang diinginkan
+  \caption{Tampilan Blueprint Read Method}
+  \label{fig:readmethod}
+\end{figure}
+
+Read method ini memiliki kegunaan untuk memanggil read method pada smart contract yang diberikan. Disini diberikan
+input berupa smart contract yang dideploy, nama method, dan content yaitu parameter yang akan diberikan pada method smart contract.
+
+Kemudian dari method tersebut akan mendecode NFT yang didapat dan mendapatkan format metadata. Di metadata tersebut akan terdapat field \texttt{audio\_url}.
+Field ini mengandung link url ke asset audio. Audio ini kemudian dapat diproses dan diplay dengan blueprints pada Unreal Engine 5.
