@@ -38,6 +38,17 @@
 \usepackage{wrapfig}
 \usepackage{float}
 
+\definecolor{lightgray}{gray}{0.9}
+
+% alternate rowcolors for all long-tables
+
+\let\oldlongtable\longtable
+
+\let\endoldlongtable\endlongtable
+
+\renewenvironment{longtable}{\rowcolors{2}{white}{lightgray}\oldlongtable} {
+\endoldlongtable}
+
 % Definisi untuk "Hati ini sengaja dikosongkan"
 \patchcmd{\cleardoublepage}{\hbox{}}{
   \thispagestyle{empty}

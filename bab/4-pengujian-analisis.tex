@@ -4,60 +4,183 @@
 % Ubah bagian-bagian berikut dengan isi dari pengujian dan analisis
 
 
-Pada penelitian ini dipaparkan hasil pengujian berupa implementasi Unreal Engine 5 yang dapat menjalankan sistem dari Smart Contract, serta melakukan pengujian terkait
+Pada penelitian ini dipaparkan hasil pengujian berupa implementasi Unreal Engine 5 yang dapat menjalankan sistem dari \emph{Smart Contract Sharing Data}, serta melakukan pengujian terkait
 dengan data audio yang diload selama proses sistem berjalan hingga ke tahap pemutaran audio.
 
-\section{Hasil Pembuatan Wallet Account}
+\section{Skenario Pengujian}
+Pengujian dilakukan dengan melakukan langkah-langkah yang telah ditulis pada bab sebelumnya. Pengujian dimulai dengan melakukan testing method-method yang ada di smart contract.
+Fungsi-fungsi yang akan dicoba adalah fungsi yang dibuat sendiri untuk mempermudah proses integrasi. Pengujian dilakukan dengan melibatkan 2 buah akun yang sudah dibuat sebelumnya
+menggunakan metamask. Kemudian untuk method-method tersebut juga akan diuji performa dari penggunaan gas dan ETH-nya. Lalu akan dilakukan pengujian integrasi dari Unreal Engine 5.
+Pengujian integrasi meliputi berhasil tidaknya melakukan pemutaran audio yang sudah di-\emph{mint} sebelumnya.
+
+\subsection{Hasil Pembuatan Wallet Account}
 Pembuatan wallet account dilakukan dengan Metamask. Pada platform metamask dapat dilakukan pembuatan akun dengan menginstall extension browsernya. Setelah terbuat akunnya maka perlu
 digunakan faucet untuk mengisi ETH. ETH yang didapat adalah sejumlah 13 GoerliETH. ETH ini sudah lebih dari cukup untuk digunakan. Kemudian dibuat juga akun kedua dan diisikan dengan GoerliETH.
 Akun kedua juga dapat digunakan untuk pengujian.
 
-\section{Hasil Pembuatan Smart Contract}
+
+\subsection{Hasil dan Pengujian Smart Contract}
 Smart Contract yang dibuat dapat digunakan untuk mint NFT. Deployment dilakukan dengan Environment Injected Provider Metamask.
 Metamask yang digunakan adalah akun yang sudah dibuat sebelumnya. Contract yang dibuat dideploy sudah digunakan untuk mint NFT.
+Untuk pengujian method \texttt{mint}, dilakukan dulu proses deploy dengan menggunakan remix IDE. Contract dideploy di Ganache untuk melakukan pengujian secara lokal karena apabila dilakukan deployment di
+Metamask maka ETH yang digunakan akan sulit untuk didapatkan kembali. Berikut ini adalah tabel dari hasil pengujian method \texttt{mint}.
+\begin{longtable}{|c|c|}
+  \caption{Hasil Pengujian Method \texttt{mint}}
+  \label{tb:UjiMint}                              \\
+  \hline
+  \rowcolor[HTML]{C0C0C0}
+  \textbf{URI}              & \textbf{Keterangan} \\
+  \hline
+  HTTP URL yang berisi JSON & Sukses              \\
+  HTTP URL random           & Sukses              \\
+  String random             & Sukses              \\
+  String kosong             & Gagal               \\
+  \hline
+\end{longtable}
 
-\section{Hasil Pembuatan Metadata dengan IPFS}
+Pada bagian string kosong akan gagal karena diberikan guard sehingga jika tidak diberikan input maka akan terjadi error.
+Sementara untuk string random seperti string yang bukan HTTP URL tidak gagal karena tidak diberikan guard ataupun kondisional yang melakukan
+pengecekan terhadap data yang diberikan.
+
+Kemudian untuk bagian method \texttt{getAllTokens} maka akan dilakukan pengujian apakah jumlah id yang dikembalikan sesuai dengan jumlah URI yang sudah di \texttt{mint}.
+
+Kegunaan dari method \texttt{getAllTokens} adalah untuk melakukan query jumlah uri yang ada di blockchain. Maka akan dilakukan pemanggilan \texttt{mint} terlebih dahulu
+sebelum melakukan pengujian \texttt{getAllTokens}.
+
+\begin{longtable}{|c|c|}
+  \caption{Hasil Pengujian Method \texttt{getAllTokens}}
+  \label{tb:UjiGetAllTokens}                                                              \\
+  \hline
+  \rowcolor[HTML]{C0C0C0}
+  \textbf{Jumlah Pemanggilan Mint} & \textbf{Panjang Nilai Balikan \texttt{getAllTokens}} \\
+  \hline
+  1                                & 1                                                    \\
+  2                                & 2                                                    \\
+  3                                & 3                                                    \\
+  4                                & 4                                                    \\
+  5                                & 5                                                    \\
+  6                                & 6                                                    \\
+  7                                & 7                                                    \\
+  8                                & 8                                                    \\
+  \hline
+\end{longtable}
+
+Dari hasil pengujian dapat dilihat hasilnya adalah sesuai ekspektasi.
+Ketika method mint dipanggil sejumlah 1 kali, maka panjang nilai yang dikembalikan oleh method \texttt{getAllTokens} adalah
+1. Ketika method mint dipanggil sejumlah 2 kali, maka panjang nilai yang dikembalikan oleh method \texttt{getAllTokens} adalah
+2. Ketika method mint dipanggil sejumlah 3 kali, maka panjang nilai yang dikembalikan oleh method \texttt{getAllTokens} adalah
+3. Ketika method mint dipanggil sejumlah 4 kali, maka panjang nilai yang dikembalikan oleh method \texttt{getAllTokens} adalah
+4. Ketika method mint dipanggil sejumlah 5 kali, maka panjang nilai yang dikembalikan oleh method \texttt{getAllTokens} adalah
+5. Ketika method mint dipanggil sejumlah 6 kali, maka panjang nilai yang dikembalikan oleh method \texttt{getAllTokens} adalah
+6. Ketika method mint dipanggil sejumlah 7 kali, maka panjang nilai yang dikembalikan oleh method \texttt{getAllTokens} adalah
+7. Ketika method mint dipanggil sejumlah 8 kali, maka panjang nilai yang dikembalikan oleh method \texttt{getAllTokens} adalah
+8.
+
+Kemudian untuk pengujian method selanjutnya adalah pengujian method \texttt{getAllTokensURI}.
+Untuk method ini akan mengembalikan balikan array yang berisi
+URI yang sudah disimpan dengan method \texttt{mint} yang sudah pernah dipanggil sebelumnya. Hasil yang diharapkan adalah dengan memanggil method ini maka URI-URI yang sudah pernah
+di mint sebelumnya akan dikembalikan dalam bentuk array.
+
+\begin{longtable}{|p{2.5in}|p{2.5in}|}
+  \caption{Hasil Pengujian Method \texttt{getAllTokensURI}}
+  \label{tb:UjiGetAllTokensURI}                                                                                                                                                                                                                                 \\
+  \hline
+  \rowcolor[HTML]{C0C0C0}
+  \textbf{Mint URI}                                                                                                            & \textbf{Balikan}                                                                                                               \\
+  \hline
+  https://bafybeu.ipfs.w3s.link/nft-1.json                                                                                     & [https://bafybeu.ipfs.w3s.link/nft-1.json]                                                                                     \\
+  https://bafybeu.ipfs.w3s.link/nft-2.json                                                                                     & [https://bafybeu.ipfs.w3s.link/nft-2.json]                                                                                     \\
+  https://bafybeu.ipfs.w3s.link/nft-1.json, https://bafybeu.ipfs.w3s.link/nft-2.json                                           & [https://bafybeu.ipfs.w3s.link/nft-1.json, https://bafybeu.ipfs.w3s.link/nft-2.json]                                           \\
+  Tidak pernah memanggil method Mint                                                                                           & []                                                                                                                             \\
+  https://bafybeu.ipfs.w3s.link/nft-1.json, https://bafybeu.ipfs.w3s.link/nft-2.json, https://bafybeu.ipfs.w3s.link/nft-3.json & [https://bafybeu.ipfs.w3s.link/nft-1.json, https://bafybeu.ipfs.w3s.link/nft-2.json, https://bafybeu.ipfs.w3s.link/nft-3.json] \\
+  \hline
+\end{longtable}
+
+Dari pemanggilan method-method getAllTokensURI hasilnya adalah sesuai dengan yang diharapkan. Apabila dilakukan mint sebanyak 2 kali maka akan dikembalikan juga sebanyak 2 dan berisikan uri-uri yang sudah pernah di mint sebelumnya.
+Apabila dilakukan mint sebanyak 3 kali maka akan dikembalikan juga sebanyak 3 dan berisikan uri-uri yang sudah pernah di mint sebelumnya.
+Apabila dilakukan mint sebanyak 4 kali maka akan dikembalikan juga sebanyak 4 dan berisikan uri-uri yang sudah pernah di mint sebelumnya.
+Apabila dilakukan mint sebanyak 5 kali maka akan dikembalikan juga sebanyak 5 dan berisikan uri-uri yang sudah pernah di mint sebelumnya.
+Method ini akan berguna untuk melakukan pemanggilan di Unreal Engine 5.
+Apabila fungsi ini dipanggil oleh Unreal Engine 5 blueprint maka akan dibaca berupa array URI.
+
+Kemudian untuk pengujian method tokenURI akan dilakukan dengan memanggil method mint dan kemudian menggunakan indexnya untuk memanggil  method tokenURI ini. Method ini akan
+menggunakan parameter tokenId yang mana adalah urutan dilakukannya mint. Index ini bersifat incremental yang artinya URI pertama memiliki index 0, URI kedua memiliki index 1,
+URI ketiga memiliki index 3, URI keempat memiliki index 4, dan URI kelima memiliki index 5, dan seterusnya.
+
+Berikut adalah tabel hasil pengujian method \texttt{tokenURI}
+
+\begin{longtable}{|p{0.5in}|p{2.5in}|p{0.5in}|p{2.5in}|}
+  \caption{Hasil Pengujian Method \texttt{tokenURI}}
+  \label{tb:UjiTokenURI}                                                                                                                      \\
+  \hline
+  \rowcolor[HTML]{C0C0C0}
+  \textbf{Mint-ke} & \textbf{URI}                             & \textbf{Parameter method tokenURI} & \textbf{Balikan method tokenURI}         \\
+  \hline
+  1                & https://bafybeu.ipfs.w3s.link/nft-1.json & 1                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  2                & https://bafybeu.ipfs.w3s.link/nft-1.json & 2                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  3                & https://bafybeu.ipfs.w3s.link/nft-1.json & 3                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  4                & https://bafybeu.ipfs.w3s.link/nft-1.json & 4                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  5                & https://bafybeu.ipfs.w3s.link/nft-1.json & 5                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  6                & https://bafybeu.ipfs.w3s.link/nft-1.json & 6                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  7                & https://bafybeu.ipfs.w3s.link/nft-1.json & 7                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  8                & https://bafybeu.ipfs.w3s.link/nft-1.json & 8                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  9                & https://bafybeu.ipfs.w3s.link/nft-1.json & 9                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  10               & https://bafybeu.ipfs.w3s.link/nft-1.json & 10                                 & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  11               & https://bafybeu.ipfs.w3s.link/nft-1.json & 11                                 & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  12               & https://bafybeu.ipfs.w3s.link/nft-1.json & 12                                 & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  13               & https://bafybeu.ipfs.w3s.link/nft-1.json & 13                                 & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  14               & https://bafybeu.ipfs.w3s.link/nft-1.json & 14                                 & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  15               & https://bafybeu.ipfs.w3s.link/nft-1.json & 15                                 & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  0                & https://bafybeu.ipfs.w3s.link/nft-1.json & 100                                & <ERROR> Invalid token ID                 \\
+  \hline
+\end{longtable}
+
+Pada kondisi normal pemanggilan method tokenURI sesuai dengan yang dikehendaki. Pemanggilan tokenURI akan mengembalikan uri dengan index yang diberikan.
+Namun jika token ID yang diberikan tidak ditemukan di blockchain, maka akan terjadi error Invalid token ID.
+
+
+\subsection{Hasil Pembuatan Metadata dengan IPFS}
 Metadata yang dibuat di IPFS sudah dapat diakses melalui gatewaynya. Contohnya untuk nft-1.json adalah sebagai berikut.
 
 \begin{figure}[H]
   \centering
 
   % Ubah dengan nama file gambar dan ukuran yang akan digunakan
-  \includegraphics[scale=0.3]{gambar/nftjsonuploaded.jpg}
+  \includegraphics[scale=0.4]{gambar/nftjsonuploaded.jpg}
 
   % Ubah dengan keterangan gambar yang diinginkan
   \caption{Tampilan IPFS nft-1.json yang sudah diupload}
   \label{fig:ipfsjsonuploaded}
 \end{figure}
 
-\section{Hasil Mint NFT}
+\subsection{Hasil Mint NFT}
 Hasil dari mint nft sudah dapat digunakan untuk integrasi Unreal Engine 5. ABI dapat dilihat pada compiler Remix IDE.
 \begin{figure}[H]
   \centering
 
   % Ubah dengan nama file gambar dan ukuran yang akan digunakan
-  \includegraphics[scale=0.3]{gambar/etherscan-deploy.jpg}
+  \includegraphics[scale=0.35]{gambar/etherscan-deploy.jpg}
 
   % Ubah dengan keterangan gambar yang diinginkan
   \caption{Etherscan dari hasil transaction mint NFT}
   \label{fig:etherscandeploy}
 \end{figure}
 
-\section{Hasil Pembuatan Project Pada Unreal Engine 5}
+\subsection{Hasil Pembuatan Project Pada Unreal Engine 5}
 Project unreal engine 5 yang sudah dibuat dapat memberikan environment visual yang dapat melakukan visualisasi audio maupun game.
 
 \begin{figure}[H]
   \centering
 
   % Ubah dengan nama file gambar dan ukuran yang akan digunakan
-  \includegraphics[scale=0.3]{gambar/ue5project.jpg}
+  \includegraphics[scale=0.35]{gambar/ue5project.jpg}
 
   % Ubah dengan keterangan gambar yang diinginkan
   \caption{Tampilan project unreal engine 5}
   \label{fig:ue5project}
 \end{figure}
 
-\section{Hasil Integrasi Kontrak dengan Unreal Engine 5}
+\subsection{Hasil Integrasi Kontrak dengan Unreal Engine 5}
 
 Setelah diintegrasikan dengan blueprint maka di lingkungan virtual unreal engine 5 sudah dapat memutar audio yang didapatkan dari NFT.
 Blueprint yang digunakan adalah sebagai berikut.
@@ -66,7 +189,7 @@ Blueprint yang digunakan adalah sebagai berikut.
   \centering
 
   % Ubah dengan nama file gambar dan ukuran yang akan digunakan
-  \includegraphics[scale=0.3]{gambar/blueprintfinal.jpg}
+  \includegraphics[scale=0.35]{gambar/blueprintfinal.jpg}
 
   % Ubah dengan keterangan gambar yang diinginkan
   \caption{Tampilan blueprint final}
