@@ -481,4 +481,71 @@ Blueprint Unreal Engine 5 akan meneruskan balikan dari pemanggilan method smart 
   \label{fig:blueprinttokenuri}
 \end{figure}
 
-Blueprint-blueprint lainnya dalam Unreal Engine 5 dapat menggunakan nilai yang dikembalikan dari pemanggilan method smart contract untuk melanjutkan proses selanjutnya. Dengan demikian, integrasi yang berhasil antara Unreal Engine 5 dan smart contract memungkinkan penggunaan data blockchain dalam pengembangan aplikasi atau permainan. Hal ini membuka peluang untuk menciptakan pengalaman unik yang berbasis pada transaksi dan kepemilikan aset digital, seperti NFT. Blueprint-blueprint selanjutnya dapat menggunakan data dari smart contract untuk mengatur logika permainan, mengatur kepemilikan aset, atau bahkan memungkinkan interaksi dengan NFT yang dimiliki oleh pemain. Dengan adanya integrasi ini, Unreal Engine 5 dapat menjadi platform yang kuat untuk membangun pengalaman Metaverse yang terhubung dengan blockchain.
+Blueprint-blueprint lainnya dalam Unreal Engine 5 dapat menggunakan nilai yang dikembalikan
+dari pemanggilan method smart contract untuk melanjutkan proses selanjutnya. Dengan demikian, integrasi yang
+berhasil antara Unreal Engine 5 dan smart contract memungkinkan penggunaan data blockchain dalam
+pengembangan aplikasi atau permainan. Hal ini membuka peluang untuk menciptakan pengalaman unik yang berbasis pada transaksi
+dan kepemilikan aset digital, seperti NFT. Blueprint-blueprint selanjutnya dapat menggunakan data dari smart contract untuk mengatur logika permainan,
+mengatur kepemilikan aset, atau bahkan memungkinkan interaksi dengan NFT yang dimiliki oleh pemain. Dengan adanya integrasi ini,
+Unreal Engine 5 dapat menjadi platform yang kuat untuk membangun pengalaman Metaverse yang terhubung dengan blockchain.
+
+\begin{figure}[H]
+  \centering
+
+  % Ubah dengan nama file gambar dan ukuran yang akan digunakan
+  \includegraphics[scale=0.35]{gambar/blueprint-load-metadata.jpg}
+
+  % Ubah dengan keterangan gambar yang diinginkan
+  \caption{Tampilan blueprint untuk load metadata}
+  \label{fig:blueprintloadmetadata}
+\end{figure}
+
+Selanjutnya adalah pengujian integrasi dengan pembacaan format metadata. Format metadata audio yang sudah dibaca pada proses sebelumnya akan diteruskan ke blueprint berikutnya.
+Berikut ini adalah tabel hasil pengujian proses memuat metadata.
+
+\begin{longtable}{|c|c|}
+  \caption{Hasil Pengujian Load Metadata Audio di UE5}
+  \label{tb:UjiIntegrasiPengujianLoadMetadataAudio} \\
+  \hline
+  \rowcolor[HTML]{C0C0C0}
+  \textbf{Metadata format} & \textbf{Keterangan}    \\
+  \hline
+  Valid                    & Sukses                 \\
+  Invalid                  & Gagal                  \\
+  \hline
+\end{longtable}
+
+Dari tabel diatas dapat diketahui bahwa jika format metadata yang diberikan tidak valid maka akan terjadi error karena file JSON yang dibaca
+akan diambil key \texttt{audio\_url}-nya, sehingga jika tidak terdapat key \texttt{audio\_url} maka haruslah terjadi error. Ini adalah hasil yang dikehendaki.
+
+Ketika keseluruhan data yang diberikan valid maka dapat dilanjutkan ke proses pengujian berikutnya yaitu proses pemutaran audio secara \emph{real time}.
+Biasanya file audio asset pada game akan dimuat secara lokal, namun tidak dengan sistem ini dimana file yang akan diputar adalah file yang berasal dari internet.
+
+File ini dimuat dengan membaca smart contract dan membaca audio url di dalam metadata yang ada di NFT pada smart contract. Untuk eksperimen berikut akan dilakukan
+dengan cara mencoba beberapa file audio yang akan di putar oleh runtime audio importer.
+
+\begin{longtable}{|c|c|c|}
+  \caption{Hasil Pengujian Pemutaran Audio di Unreal Engine 5}
+  \label{tb:UjiIntegrasiPemutaranAudio}                       \\
+  \hline
+  \rowcolor[HTML]{C0C0C0}
+  \textbf{Audio format} & \textbf{Size} & \textbf{Keterangan} \\
+  \hline
+  mp3                   & 5mb           & Sukses              \\
+  mp3                   & 10mb          & Sukses              \\
+  mp3                   & 1000mb        & Gagal               \\
+  wav                   & 5mb           & Gagal               \\
+  wav                   & 10mb          & Gagal               \\
+  ogg                   & 5mb           & Gagal               \\
+  ogg                   & 10mb          & Gagal               \\
+  \hline
+\end{longtable}
+
+Dari hasil pengujian diketahui bahwa format data yang disupport hanyalah mp3 saja, sementara untuk ukuran file juga berpengaruh.
+Semakin besar ukuran file maka waktu tunggu juga semakin lama. Akan tetapi karena file audio dimuat dalam memori jika ukuran file terlalu besar maka
+akan terjadi crash.
+
+\section{Evaluasi Pengujian}
+Berdasarkan pengujian yang telah dilakukan, pengujian sistem Sharing Data berbasis blockchain di metaverse dapat berjalan sebagaimana mestinya.
+
+
