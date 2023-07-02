@@ -140,6 +140,12 @@ Namun jika token ID yang diberikan tidak ditemukan di blockchain, maka akan terj
 Hal ini merupakan \emph{behavior} yang dikehendaki karena memang jika tidak ditemukan URI seharusnya dihasilkan error.
 Jika tidak   diberikan  error maka bisa terjadi \emph{undefined behavior} pada saat digunakan di Unreal Engine 5.
 
+Dalam konteks integrasi dengan Unreal Engine 5, jika URI tidak ditemukan atau mengembalikan hasil yang tidak valid, dapat mempengaruhi pengalaman pengguna atau proses pemrosesan data yang menggunakan URI tersebut. Oleh karena itu, dengan memberikan error "Invalid token ID" saat tidak ditemukannya URI yang sesuai, pengembang dapat dengan mudah mendeteksi dan menangani kasus tersebut secara programatik.
+
+Dalam pengembangan dengan Unreal Engine 5, penting bagi pengembang untuk memahami dan menangani situasi ketika URI tidak tersedia atau tidak valid. Hal ini membantu mencegah kesalahan dalam penggunaan data dan memastikan keandalan aplikasi yang diintegrasikan dengan smart contract.
+
+Dengan adanya error "Invalid token ID" sebagai respons saat token URI tidak ditemukan, pengembang dapat melakukan penanganan yang tepat dalam aplikasi mereka, seperti memberikan pesan kesalahan yang informatif kepada pengguna, mengambil tindakan alternatif, atau mengambil langkah pemulihan yang sesuai.
+
 Pada pengujian selanjutnya adalah pengujian gas pada setiap method-method diatas. Pengujian ini bertujuan untuk mengukur
 efisiensi smart contract yang digunakan pada penelitian ini.
 
@@ -164,6 +170,8 @@ Tujuan dari pengujian ini adalah untuk mengetahui berapa besar biaya gas yang di
 Proses dari pengujian ini sama seperti dengan Ganache network, hanya saja setiap proses sistem yang berjalan, lamanya waktu terkonfirmasi pada Metamask ditemukan variasi, yang mana
 sangat berbeda dengan Ganache yang tidak memiliki jeda. Untuk method-method yang bersifat read only atau tidak payable dan tidak melakukan write operation tidak dilakukan
 uji gas karena method-method tersebut tidak menggunakan gas untuk dieksekusi.
+
+Dengan melakukan pengujian ini, pengembang dapat memperoleh pemahaman yang lebih baik tentang biaya gas yang terkait dengan menjalankan proses sistem pada Smart Contract. Informasi ini dapat digunakan untuk mengoptimalkan dan memperbaiki efisiensi penggunaan gas, serta memastikan bahwa Smart Contract berjalan secara optimal dengan biaya yang sesuai dan meminimalkan risiko transaksi yang tidak memadai.
 
 \begin{enumerate}
   \item
@@ -221,6 +229,8 @@ uji gas karena method-method tersebut tidak menggunakan gas untuk dieksekusi.
         banyak dibandingkan method yang bersifat write. Pengujian ini akan dilakukan dengan jaringan lokal ganache dan juga jaringan Goerli dan Sepolia.
         Berikut ini adalah table hasil pengujian efisiensi gas untuk pemanggilan method mint pada smart contract.
 
+        Pengujian efisiensi gas ini penting untuk memahami dan mengoptimalkan biaya yang dikeluarkan dalam proses pembuatan NFT dan penyimpanan data URI. Dengan mengetahui jumlah gas yang diperlukan, pengembang dapat mengambil langkah-langkah untuk meningkatkan efisiensi penggunaan gas dan meminimalkan biaya yang terkait dengan operasi-operasi tersebut pada smart contract.
+
         \begin{longtable}{|c|c|c|}
           \caption{Hasil Pengujian Gas Mint Smart Contract}
           \label{tb:UjiGasMint}                                                                            \\
@@ -270,6 +280,12 @@ uji gas karena method-method tersebut tidak menggunakan gas untuk dieksekusi.
 \subsection{Hasil Pembuatan Metadata dengan IPFS}
 Pengujian untuk IPFS dilakukan dengan cara melakukan pencocokan metadata dengan OpenSea. Metadata yang distandarkan oleh OpenSea akan digunakan dalam sistem.
 
+Dalam pengembangan aplikasi dengan Unreal Engine 5, penting untuk memastikan bahwa metadata yang diunggah ke IPFS sesuai dengan standar yang diterima oleh OpenSea. Hal ini penting karena kompatibilitas dengan OpenSea memungkinkan NFT yang dibuat dengan Unreal Engine 5 dapat diperdagangkan secara interoperabel di platform tersebut.
+
+Dengan melakukan pencocokan metadata dengan standar OpenSea, pengembang dapat memastikan bahwa NFT yang dihasilkan oleh Unreal Engine 5 dapat diakses dan dikenali dengan benar oleh platform perdagangan yang kompatibel. Hal ini memungkinkan NFT tersebut untuk mendapatkan eksposur lebih luas dan meningkatkan likuiditas dan nilai jualnya.
+
+Dalam proses pengujian, metadata yang dihasilkan oleh Unreal Engine 5 akan dibandingkan dengan standar metadata yang ditetapkan oleh OpenSea untuk memastikan kesesuaian dan konsistensi. Jika metadata sesuai dengan standar OpenSea, maka NFT yang dibuat dengan Unreal Engine 5 dapat diintegrasikan dengan lancar dalam ekosistem OpenSea dan mendapatkan manfaat dari fitur-fitur yang disediakan oleh platform tersebut.
+
 Metadata yang dibuat di IPFS sudah dapat diakses melalui gatewaynya. Contohnya untuk nft-1.json adalah sebagai berikut.
 
 \begin{figure}[H]
@@ -301,6 +317,8 @@ di dalam URI yang diberikan.
 
 Penelitian ini menggunakan metadata yang sudah distandarkan oleh OpenSea, namun tidak ada pengecekan untuk formatnya itu sendiri sehingga apabila dimasukkan format yang salah maka integrasi dengan Unreal Engine 5 akan
 gagal dan menyebabkan error yang detailnya akan dijelaskan pada pengujian-pengujian berikutnya.
+
+Meskipun pengecekan format metadata tidak dilakukan dalam penelitian ini, hal tersebut merupakan langkah yang penting dalam pengembangan yang sebenarnya. Sebelum mengintegrasikan metadata dengan Unreal Engine 5, disarankan untuk memastikan bahwa metadata yang digunakan sesuai dengan format yang diharapkan untuk mencegah terjadinya kesalahan dan kegagalan integrasi yang dapat mempengaruhi fungsionalitas aplikasi.
 
 \subsection{Hasil Mint NFT}
 Pengujian ini berbeda dengan pengujian method \texttt{mint} yang ada pada pengujian-pengujian sebelumnya. Pada pengujian ini proses mint yang dimaksud adalah
@@ -337,8 +355,22 @@ Hasil dari mint nft sudah dapat digunakan untuk integrasi Unreal Engine 5. ABI d
   \label{fig:etherscandeploy}
 \end{figure}
 
+ABI yang dapat dilihat di etherscan dapat digunakan pada integrasi Unreal Engine 5. Hal ini dilakukan agar
+Unreal Engine 5 dapat membaca method-method apa saja yang terdapat pada smart contract. Kemudian diperlukan juga
+alamat contract yang sudah dideploy agar Unreal Engine 5 yang sudah mengetahui spesifikasi smart contract dapat melakukan read data
+yang sudah tersimpan dengan pemanggilan mint sebelumnnya.
+
+Dengan menggunakan ABI yang dapat dilihat di etherscan, Unreal Engine 5 dapat melakukan integrasi dengan smart contract yang sudah dideploy. ABI (Application Binary Interface) adalah deskripsi formal dari method dan variabel yang ada dalam smart contract. Dengan mengetahui ABI dari smart contract, Unreal Engine 5 dapat memahami dan berinteraksi dengan method-method yang terdapat dalam smart contract tersebut.
+
+Selain itu, untuk dapat membaca data yang sudah tersimpan di smart contract, Unreal Engine 5 juga memerlukan alamat contract yang sudah dideploy di blockchain. Dengan mengetahui alamat contract, Unreal Engine 5 dapat melakukan pemanggilan ke smart contract tersebut dan mengakses data yang sudah tersimpan di dalamnya.
+
+Proses ini memungkinkan Unreal Engine 5 untuk mengintegrasikan dan menggunakan data yang ada di dalam smart contract dalam pengembangan dan simulasi metaverse. Dengan memanggil method-method yang terdapat dalam smart contract, Unreal Engine 5 dapat membaca, memperbarui, atau menggunakan data yang ada di dalamnya sesuai dengan kebutuhan pengembangan aplikasi atau simulasi metaverse yang sedang dilakukan.
+
+Dengan adanya integrasi ini, Unreal Engine 5 dapat memanfaatkan potensi penuh dari smart contract dalam membangun pengalaman metaverse yang lebih dinamis, interaktif, dan terkoneksi dengan teknologi blockchain.
+
 \subsection{Hasil Pembuatan Project Pada Unreal Engine 5}
 Project unreal engine 5 yang sudah dibuat dapat memberikan environment visual yang dapat melakukan visualisasi audio maupun game.
+Digunakan juga beberapa plugin yang dapat membantu proses integrasi.
 
 \begin{figure}[H]
   \centering
@@ -350,6 +382,16 @@ Project unreal engine 5 yang sudah dibuat dapat memberikan environment visual ya
   \caption{Tampilan project unreal engine 5}
   \label{fig:ue5project}
 \end{figure}
+
+Avatar yang disediakan oleh Unreal Engine 5 dapat digunakan untuk melakukan simulasi Metaverse.
+Pada pengujian dilakukan operasi pergerakan avatar dan melakukan penginstallan plugin-plugin web3 yang dapat membantu proses integrasi.
+Selain itu, Unreal Engine 5 juga menyediakan avatar yang dapat digunakan untuk melakukan simulasi di dalam metaverse. Avatar tersebut memungkinkan pengguna untuk menciptakan representasi digital dari diri mereka sendiri atau karakter yang mereka pilih, dan berinteraksi dengan lingkungan dan pengguna lain di dalam metaverse.
+
+Selama pengujian, dilakukan operasi pergerakan avatar untuk menguji kemampuan navigasi dan interaksi di dalam metaverse. Selain itu, pengujian juga melibatkan penginstalan plugin-plugin web3 yang dirancang khusus untuk Unreal Engine 5. Plugin-plugin ini membantu proses integrasi dengan teknologi Web3, seperti blockchain dan smart contract, sehingga memungkinkan pengguna untuk terlibat dalam transaksi dan aktivitas berbasis kripto di dalam metaverse.
+
+Dengan adanya fitur avatar dan integrasi dengan plugin-plugin web3, Unreal Engine 5 memberikan kesempatan bagi pengembang dan pengguna untuk merasakan pengalaman yang lebih mendalam dan interaktif di dalam metaverse. Pengguna dapat menjelajahi lingkungan yang dirancang dengan detail, berinteraksi dengan avatar lain, melakukan transaksi menggunakan kriptocurrency, dan terlibat dalam aktivitas-aktivitas kreatif dan sosial yang unik di dalam metaverse.
+
+Dalam keseluruhan, Unreal Engine 5 memainkan peran penting dalam memfasilitasi simulasi metaverse dengan menyediakan fitur avatar yang dapat digunakan untuk mewakili pengguna dan integrasi dengan plugin-plugin web3. Hal ini memungkinkan pengembang dan pengguna untuk terlibat dalam pengalaman metaverse yang lebih imersif, dinamis, dan terkoneksi dengan teknologi blockchain.
 
 \subsection{Hasil Integrasi Kontrak dengan Unreal Engine 5}
 
@@ -366,3 +408,21 @@ Blueprint yang digunakan adalah sebagai berikut.
   \caption{Tampilan blueprint final}
   \label{fig:blueprintfinal}
 \end{figure}
+
+Pengujian yang akan dilakukan adalah berhasil tidaknya integrasi dengan cara
+melakukan pemutaran audio dengan menggunakan metadata yang sudah di mint pada proses sebelumnya.
+Akan dilakukan beragam cara yakni menggunakan ABI yang tidak valid dan juga sebaliknya.
+
+\begin{longtable}{|c|c|}
+  \caption{Hasil Pengujian Integrasi \texttt{mint}}
+  \label{tb:UjiIntegrasiUE5}                              \\
+  \hline
+  \rowcolor[HTML]{C0C0C0}
+  \textbf{URI}              & \textbf{Keterangan} \\
+  \hline
+  HTTP URL yang berisi JSON & Sukses              \\
+  HTTP URL random           & Sukses              \\
+  String random             & Sukses              \\
+  String kosong             & Gagal               \\
+  \hline
+\end{longtable}
