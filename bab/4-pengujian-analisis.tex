@@ -413,16 +413,72 @@ Pengujian yang akan dilakukan adalah berhasil tidaknya integrasi dengan cara
 melakukan pemutaran audio dengan menggunakan metadata yang sudah di mint pada proses sebelumnya.
 Akan dilakukan beragam cara yakni menggunakan ABI yang tidak valid dan juga sebaliknya.
 
+\begin{figure}[H]
+  \centering
+
+  % Ubah dengan nama file gambar dan ukuran yang akan digunakan
+  \includegraphics[scale=0.35]{gambar/contract-abi.jpg}
+
+  % Ubah dengan keterangan gambar yang diinginkan
+  \caption{Tampilan contract ABI di Unreal Engine 5}
+  \label{fig:contractabiue5}
+\end{figure}
+
 \begin{longtable}{|c|c|}
-  \caption{Hasil Pengujian Integrasi \texttt{mint}}
-  \label{tb:UjiIntegrasiUE5}                              \\
+  \caption{Hasil Pengujian ABI Smart Contract di UE5}
+  \label{tb:UjiIntegrasiUE5ABI}               \\
   \hline
   \rowcolor[HTML]{C0C0C0}
-  \textbf{URI}              & \textbf{Keterangan} \\
+  \textbf{Contract ABI} & \textbf{Keterangan} \\
   \hline
-  HTTP URL yang berisi JSON & Sukses              \\
-  HTTP URL random           & Sukses              \\
-  String random             & Sukses              \\
-  String kosong             & Gagal               \\
+  Valid                 & Sukses              \\
+  Invalid               & Gagal               \\
   \hline
 \end{longtable}
+
+Dari tabel di atas, dapat disimpulkan bahwa keberhasilan integrasi tergantung pada validitas Contract ABI. Jika Contract ABI tidak valid, proses integrasi tidak dapat dilakukan karena langkah pertama yang harus dilakukan adalah
+menyediakan Contract ABI yang benar. Contract ABI digunakan sebagai deskripsi antarmuka dari smart contract yang akan diintegrasikan, dan kesalahan dalam Contract ABI dapat menghambat atau menyebabkan kegagalan integrasi dengan Unreal Engine 5. Oleh karena itu, penting untuk memastikan keakuratan dan kevalidan Contract ABI sebelum melanjutkan proses integrasi.
+
+Selanjutnya adalah pengujian proses pemanggilan smart contract di Unreal Engine 5. Pada proses ini
+blueprint yang digunakan akan memanggil method-method read yang ada pada smart contract yang sudah dibaca dalam tahapan pemberian Contract ABI sebelumnya seperti \texttt{tokenURI}, \texttt{getAllTokens}, dan \texttt{getAllTokensURI}. Dengan memanggil method tersebut diharapkan dapat dimuat metadata JSON yang sudah di \texttt{mint}
+pada tahapan sebelumnya.
+
+\begin{longtable}{|c|c|c|c|c|}
+  \caption{Hasil Pengujian Pemanggilan method menggunakan Blueprint}
+  \label{tb:UjiPemanggilanMethod}                                                               \\
+  \hline
+  \rowcolor[HTML]{C0C0C0}
+  \textbf{Method} & \textbf{Alamat Contract} & \textbf{Sesuai Dengan ABI} & \textbf{Keterangan} \\
+  \hline
+  tokenURI        & Valid                    & true                       & Sukses              \\
+  tokenURI        & Invalid                  & true                       & Gagal               \\
+  tokenURI        & Valid                    & false                      & Gagal               \\
+  tokenURI        & Invalid                  & false                      & Gagal               \\
+  getAllTokens    & Valid                    & true                       & Sukses              \\
+  getAllTokens    & Invalid                  & true                       & Gagal               \\
+  getAllTokens    & Valid                    & false                      & Gagal               \\
+  getAllTokens    & Invalid                  & false                      & Gagal               \\
+  getAllTokensURI & Valid                    & true                       & Sukses              \\
+  getAllTokensURI & Invalid                  & true                       & Gagal               \\
+  getAllTokensURI & Valid                    & false                      & Gagal               \\
+  getAllTokensURI & Invalid                  & false                      & Gagal               \\
+  \hline
+\end{longtable}
+
+Dari tabel diatas dapat diketahui bahwa apabila alamat contract yang diberikan tidak valid atau tidak cocok maka
+akan terjadi error sehingga menyebabkan proses integrasi gagal.
+Jika alamat contract valid dan cocok dengan ABI dan contract juga valid maka pembacaan method akan mengembalikan nilai yang benar.
+Blueprint Unreal Engine 5 akan meneruskan balikan dari pemanggilan method smart contract ini untuk diproses pada blueprint-blueprint selanjutnya.
+
+\begin{figure}[H]
+  \centering
+
+  % Ubah dengan nama file gambar dan ukuran yang akan digunakan
+  \includegraphics[scale=0.35]{gambar/blueprint-tokenuri.jpg}
+
+  % Ubah dengan keterangan gambar yang diinginkan
+  \caption{Tampilan blueprint untuk pemanggilan method \texttt{tokenURI}}
+  \label{fig:blueprinttokenuri}
+\end{figure}
+
+Blueprint-blueprint lainnya dalam Unreal Engine 5 dapat menggunakan nilai yang dikembalikan dari pemanggilan method smart contract untuk melanjutkan proses selanjutnya. Dengan demikian, integrasi yang berhasil antara Unreal Engine 5 dan smart contract memungkinkan penggunaan data blockchain dalam pengembangan aplikasi atau permainan. Hal ini membuka peluang untuk menciptakan pengalaman unik yang berbasis pada transaksi dan kepemilikan aset digital, seperti NFT. Blueprint-blueprint selanjutnya dapat menggunakan data dari smart contract untuk mengatur logika permainan, mengatur kepemilikan aset, atau bahkan memungkinkan interaksi dengan NFT yang dimiliki oleh pemain. Dengan adanya integrasi ini, Unreal Engine 5 dapat menjadi platform yang kuat untuk membangun pengalaman Metaverse yang terhubung dengan blockchain.
