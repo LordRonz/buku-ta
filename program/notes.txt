@@ -1,0 +1,19 @@
+# Metamask
+Pass: Bruhbruh123
+
+# Etherscan
+
+- latest: https://goerli.etherscan.io/tx/0x03baed94a110ccfe0fdcd04f94873fec97a53d42cb67c90d0ad9473f63f85000
+0x4d3f99a98620b85ECb8dA897A1954b905f1BbBaF
+
+- old: 0x86c62ddD1739a508521EdD444cBf9E409bE51664
+
+# NFT Links
+
+mp3 link: https://bafybeihlsezyiflcsf5oulsvr53y7sygopdarz2qxc4pulg5k23rh22uau.ipfs.w3s.link/ipfs/bafybeihlsezyiflcsf5oulsvr53y7sygopdarz2qxc4pulg5k23rh22uau/nft-1.json
+
+wav link: https://bafybeihbvvkwuvohnuockfhfomw6vybacwuebyovryuixmb4kkreqozvyy.ipfs.w3s.link/ipfs/bafybeihbvvkwuvohnuockfhfomw6vybacwuebyovryuixmb4kkreqozvyy/nft-wav.json
+
+flac link: https://bafybeifngg3qccqareggclinl3ynfo3apfhl6gmif3w6z6xowof2ztdipq.ipfs.w3s.link/ipfs/bafybeifngg3qccqareggclinl3ynfo3apfhl6gmif3w6z6xowof2ztdipq/nft-flac.json
+
+2nd wav link: 

@@ -1,0 +1,18 @@
+{
+  "audio_url": "https://bafybeif574xquylg22zkkn6hwy6dhuqckhxgg3kfpi3msbcva5l7eg6ay4.ipfs.w3s.link/ipfs/bafybeif574xquylg22zkkn6hwy6dhuqckhxgg3kfpi3msbcva5l7eg6ay4/unknown-realm-147409.wav",
+  "image": "https://pokemonletsgo.pokemon.com/assets/img/common/char-pikachu.png",
+  "external_url": "https://ronz.vercel.app",
+  "description": "Ini adalah NFT WAV",
+  "name": "Test NFT WAV",
+  "animation_url": "https://bafybeiarxvyyzfkvn3ytryihppftb4n6bj7jtuyvpxatsuwm3q2na5ktjm.ipfs.w3s.link/ipfs/bafybeiarxvyyzfkvn3ytryihppftb4n6bj7jtuyvpxatsuwm3q2na5ktjm/hello_world.mp3",
+  "attributes": [
+    {
+      "trait_type": "Metal",
+      "value": "metal"
+    },
+    {
+      "trait_type": "Artist",
+      "value": "ariel"
+    }
+  ]
+}

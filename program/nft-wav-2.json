@@ -1,0 +1,18 @@
+{
+  "audio_url": "https://bafybeih7xak4kcut6wyfdb2xlyheohintm33c7w7db4zykoqn5bs5txyu4.ipfs.w3s.link/ipfs/bafybeih7xak4kcut6wyfdb2xlyheohintm33c7w7db4zykoqn5bs5txyu4/mixkit-arcade-retro-game-over-213.wav",
+  "image": "https://pokemonletsgo.pokemon.com/assets/img/common/char-pikachu.png",
+  "external_url": "https://ronz.vercel.app",
+  "description": "Ini adalah NFT WAV-2",
+  "name": "Test NFT WAV-2",
+  "animation_url": "https://bafybeiarxvyyzfkvn3ytryihppftb4n6bj7jtuyvpxatsuwm3q2na5ktjm.ipfs.w3s.link/ipfs/bafybeiarxvyyzfkvn3ytryihppftb4n6bj7jtuyvpxatsuwm3q2na5ktjm/hello_world.mp3",
+  "attributes": [
+    {
+      "trait_type": "Metal",
+      "value": "metal"
+    },
+    {
+      "trait_type": "Artist",
+      "value": "ariel"
+    }
+  ]
+}
