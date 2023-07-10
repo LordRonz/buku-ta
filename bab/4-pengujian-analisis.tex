@@ -116,21 +116,21 @@ Berikut adalah tabel hasil pengujian method \texttt{tokenURI}
   \rowcolor[HTML]{C0C0C0}
   \textbf{Mint-ke} & \textbf{URI}                             & \textbf{Parameter method tokenURI} & \textbf{Balikan method tokenURI}         \\
   \hline
-  1                & https://bafybeu.ipfs.w3s.link/nft-1.json & 1                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
-  2                & https://bafybeu.ipfs.w3s.link/nft-1.json & 2                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
-  3                & https://bafybeu.ipfs.w3s.link/nft-1.json & 3                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
-  4                & https://bafybeu.ipfs.w3s.link/nft-1.json & 4                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
-  5                & https://bafybeu.ipfs.w3s.link/nft-1.json & 5                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
-  6                & https://bafybeu.ipfs.w3s.link/nft-1.json & 6                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
-  7                & https://bafybeu.ipfs.w3s.link/nft-1.json & 7                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
-  8                & https://bafybeu.ipfs.w3s.link/nft-1.json & 8                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
-  9                & https://bafybeu.ipfs.w3s.link/nft-1.json & 9                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
-  10               & https://bafybeu.ipfs.w3s.link/nft-1.json & 10                                 & https://bafybeu.ipfs.w3s.link/nft-1.json \\
-  11               & https://bafybeu.ipfs.w3s.link/nft-1.json & 11                                 & https://bafybeu.ipfs.w3s.link/nft-1.json \\
-  12               & https://bafybeu.ipfs.w3s.link/nft-1.json & 12                                 & https://bafybeu.ipfs.w3s.link/nft-1.json \\
-  13               & https://bafybeu.ipfs.w3s.link/nft-1.json & 13                                 & https://bafybeu.ipfs.w3s.link/nft-1.json \\
-  14               & https://bafybeu.ipfs.w3s.link/nft-1.json & 14                                 & https://bafybeu.ipfs.w3s.link/nft-1.json \\
-  15               & https://bafybeu.ipfs.w3s.link/nft-1.json & 15                                 & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  1                & https://bafybeu.ipfs.w3s.link/nft-1.json & 0                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  2                & https://bafybeu.ipfs.w3s.link/nft-1.json & 1                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  3                & https://bafybeu.ipfs.w3s.link/nft-1.json & 2                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  4                & https://bafybeu.ipfs.w3s.link/nft-1.json & 3                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  5                & https://bafybeu.ipfs.w3s.link/nft-1.json & 4                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  6                & https://bafybeu.ipfs.w3s.link/nft-1.json & 5                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  7                & https://bafybeu.ipfs.w3s.link/nft-1.json & 6                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  8                & https://bafybeu.ipfs.w3s.link/nft-1.json & 7                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  9                & https://bafybeu.ipfs.w3s.link/nft-1.json & 8                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  10               & https://bafybeu.ipfs.w3s.link/nft-1.json & 9                                  & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  11               & https://bafybeu.ipfs.w3s.link/nft-1.json & 10                                 & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  12               & https://bafybeu.ipfs.w3s.link/nft-1.json & 11                                 & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  13               & https://bafybeu.ipfs.w3s.link/nft-1.json & 12                                 & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  14               & https://bafybeu.ipfs.w3s.link/nft-1.json & 13                                 & https://bafybeu.ipfs.w3s.link/nft-1.json \\
+  15               & https://bafybeu.ipfs.w3s.link/nft-1.json & 14                                 & https://bafybeu.ipfs.w3s.link/nft-1.json \\
   0                & https://bafybeu.ipfs.w3s.link/nft-1.json & 100                                & <ERROR> Invalid token ID                 \\
   \hline
 \end{longtable}
@@ -550,5 +550,13 @@ akan terjadi crash.
 
 \section{Evaluasi Pengujian}
 Berdasarkan pengujian yang telah dilakukan, pengujian sistem Sharing Data berbasis blockchain di metaverse dapat berjalan sebagaimana mestinya.
+Method \emph{mint} pada \emph{smart contract} hanya akan gagal apabila string yang diberikan kosong. Method \emph{getAllTokens} akan mengembalikan array sepanjang banyaknya jumlah
+pemanggilan \emph{mint}. Lalu untuk method \emph{getAllTokensURI} akan mengembalikan array yang berisi URI yang sudah pernah di-\emph{mint} sebelumnya.
 
+Kemudian untuk pengujian \emph{method} \texttt{tokenURI} diketahui bahwa \emph{method} ini akan mengembalikan URI yang sesuai dengan urutan pemanggilan \texttt{mint}.
+URI tersebut disimpan dalam bentuk array sehingga apabila diberikan parameter bilangan yang tidak di dalam \emph{range} \emph{array} tersebut maka akan terjadi \emph{error}.
+Kemudian terdapat juga pengujian gas dari proses \emph{deploy smart contract} dan juga pemanggilan \emph{mint}. Diperoleh bahwa pemakaian gas tertinggi didapatkan ketika dilakukan proses
+\emph{deployment}. Lalu untuk \emph{Gas Used} yang paling banyak digunakan diantara \emph{test net} adalah Goerli. Lalu untuk pemanggilan \emph{smart contract method} dengan \emph{UE5 blueprint} didapati bahwa
+hanya akan sukses apabila ABI dan alamat \emph{contract} yang diberikan valid. Lalu untuk jenis file yang didukung adalah file dengan format mp3, wav, dan flac. Sementara ogg belum mendapat \emph{support}.
+Untuk ukuran file juga mempengaruhi delay daripada pemutaran audio ini, dengan file mp3 pada pengujian yang berukuran 1000mb maka akan terjadi gagal.
 
