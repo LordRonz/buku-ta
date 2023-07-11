@@ -10,11 +10,13 @@ Berdasarkan hasil pengujian yang mulai dari pengujian sistem Sharing Data Audio 
 
 \begin{enumerate}[nolistsep]
 
-  \item 
+  \item \emph{Smart contract} yang dibuat membutuhkan rerata konsumsi gas sebesar 3275354 ether untuk melakukan \emph{deployment smart contract} di \emph{testnet}, dan 3274368 di \emph{Ganache}. Untuk pemanggilan \emph{method mint} dibutuhkan \emph{gas} sebesar 125574 di \emph{testnet}
 
-  \item Sistem ini memiliki beberapa ketentuan format yang mengikat mengingat pada pengujian diperlukan data yang valid.
+  \item Sistem ini memiliki beberapa ketentuan format yang mengikat mengingat pada pengujian diperlukan data yang valid pada \emph{JSON metadata}, yang memiliki setidaknya 1 \emph{key} \texttt{audio\_url}.
 
-  \item Sinergi untuk web3 tercapai dengan adanya integrasi dengan smart contract ethereum yang juga interoperable dengan blockchain lain seperti solana, polygon, dan lain-lain.
+  \item Sinergi untuk web3 tercapai dengan adanya integrasi dengan smart contract ethereum yang juga interoperable dengan blockchain lain seperti solana dan polygon.
+
+  \item Terdapat 3 file audio yang dapat dibaca oleh Unreal Engine 5 secara real time, yakni mp3, flac, dan wav.
 
 \end{enumerate}
 
@@ -25,7 +27,7 @@ Untuk pengembangan lebih lanjut pada penelitian ini, terdapat beberapa saran yan
 
 \begin{enumerate}[nolistsep]
 
-  \item Menggunakan metasound pada versi Unreal Engine 5.3 yang akan datang karena akan semakin erat kaitannya dengan web3 dan metaverse. Pada penelitian ini menggunakan audio player bawaan dari Unreal Engine 5.
+  \item Menggunakan \emph{metasound} pada versi Unreal Engine 5.3 yang akan datang karena akan semakin erat kaitannya dengan web3 dan metaverse. Pada penelitian ini menggunakan audio player bawaan dari Unreal Engine 5.
 
   \item Membuat sistem validasi yang lebih \emph{robust} sehingga dapat mencegah error runtime baik pada smart contract dan juga Unreal Engine 5 terkhusus pada bagian blueprint.
 
