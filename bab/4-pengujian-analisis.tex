@@ -503,15 +503,17 @@ Unreal Engine 5 dapat menjadi platform yang kuat untuk membangun pengalaman Meta
 Selanjutnya adalah pengujian integrasi dengan pembacaan format metadata. Format metadata audio yang sudah dibaca pada proses sebelumnya akan diteruskan ke blueprint berikutnya.
 Berikut ini adalah tabel hasil pengujian proses memuat metadata.
 
-\begin{longtable}{|c|c|}
+\begin{longtable}{|c|c|c|}
   \caption{Hasil Pengujian Load Metadata Audio di UE5}
-  \label{tb:UjiIntegrasiPengujianLoadMetadataAudio} \\
+  \label{tb:UjiIntegrasiPengujianLoadMetadataAudio}                                    \\
   \hline
   \rowcolor[HTML]{C0C0C0}
-  \textbf{Metadata format} & \textbf{Keterangan}    \\
+  \textbf{JSON Key di Metadata} & \textbf{JSON Key di Blueprint} & \textbf{Keterangan} \\
   \hline
-  Valid                    & Sukses                 \\
-  Invalid                  & Gagal                  \\
+  audio\_url                    & audio\_url                     & Sukses              \\
+  music\_url                    & audio\_url                     & Gagal               \\
+  music\_url                    & music\_url                     & Sukses              \\
+  audio\_url                    & music\_url                     & Gagal              \\
   \hline
 \end{longtable}
 
