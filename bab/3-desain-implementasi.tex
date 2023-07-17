@@ -129,6 +129,40 @@ di-play.
   \label{fig:desainsistem}
 \end{figure}
 
+Kemudian dari urutan aliran data akan dijelaskan pada bagan \ref{fig:alirdata}.
+\begin{figure}[H]
+  \centering
+
+  % Ubah dengan nama file gambar dan ukuran yang akan digunakan
+  \includegraphics[scale=1]{gambar/alir-data.png}
+
+  % Ubah dengan keterangan gambar yang diinginkan
+  \caption{Bagan Alir Data}
+  \label{fig:alirdata}
+\end{figure}
+
+Audio file yang berupa mp3 dan sejenisnya akan diunggah ke IPFS. Kemudian URL dari audio file akan diletakkan di file JSON. File JSON tersebut akan
+diunggah kembali ke IPFS. URL dari JSON yang terdapat di IPFS akan diberikan pada parameter method mint untuk membuat token NFT dari metadata Audio.
+Lalu NFT yang sudah tersimpan di \emph{blockchain} akan dibaca oleh Unreal Engine 5 dan memutar audio yang ada di URL pada NFT.
+
+Dari sisi pengguna akan mendapatkan pengalaman seperti bagan \ref{fig:userflow}.
+
+\begin{figure}[H]
+  \centering
+
+  % Ubah dengan nama file gambar dan ukuran yang akan digunakan
+  \includegraphics[scale=1]{gambar/user-flow.png}
+
+  % Ubah dengan keterangan gambar yang diinginkan
+  \caption{Bagan User Flow}
+  \label{fig:userflow}
+\end{figure}
+
+Pada contoh terdapat user A yang menyiapkan JSON dan audio di IPFS, lalu dilakukan Mint URL di smart contract UI.
+User B akan mentrigger key pada Metaverse untuk memutar audio yang sudah dilakukan \emph{mint} oleh user A.
+Jika data audio yang diberikan pada smart contract valid, maka audio dapat diputar. Apabila data pada \emph{smart contract} tidak valid
+maka audio tidak diputar.
+
 \section{Create Wallet Account}
 
 Proses pertama yang dilakukan adalah pembuatan akun wallet Ethereum dengan bantuan Metamask. Metamask merupakan sebuah plugin browser yang berfungsi sebagai
